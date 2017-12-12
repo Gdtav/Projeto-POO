@@ -8,12 +8,13 @@ public class Employee extends Person {
         this.regime = regime;
     }
 
-    String type() {
-        return null;
+    public String type() {
+        return "Employee";
     }
 
     @Override
     public String toString() {
-        return super.toString();
+        return super.toString() +
+                "\nRegime: " + regime;
     }
 }

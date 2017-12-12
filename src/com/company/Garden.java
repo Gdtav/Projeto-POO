@@ -1,22 +1,20 @@
 package com.company;
 
-import java.util.ArrayList;
-
 public class Garden extends Location {
-    private float area;
+    private double area;
 
-    public Garden(String name, ArrayList<Person> attendees, float lat, float lon, float area) {
-        super(name, attendees, lat, lon);
-        this.area = area;
-    }
-
-    public Garden(String name, float lat, float lon, float area) {
-        super(name, lat, lon);
+    public Garden(String name, float lat, float lon, double area) {
+        super(name, lat, lon, 0, 0);
         this.area = area;
     }
 
     @Override
     public String toString() {
-        return super.toString();
+        return super.toString() +
+                "\nArea: " + area + "m²";
+    }
+
+    public String type() {
+        return "Garden";
     }
 }

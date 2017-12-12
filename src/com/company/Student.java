@@ -8,12 +8,13 @@ public class Student extends Person {
         this.course = course;
     }
 
-    String type() {
-        return null;
+    public String type() {
+        return "Student";
     }
 
     @Override
     public String toString() {
-        return super.toString();
+        return super.toString() +
+                "\nCourse: " + course;
     }
 }

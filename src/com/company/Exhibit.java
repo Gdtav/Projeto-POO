@@ -1,25 +1,21 @@
 package com.company;
 
-import java.util.ArrayList;
-
 public class Exhibit extends Location {
-    private String type;
-    private float price;
+    private String category;
 
-    public Exhibit(String name, ArrayList<Person> attendees, float lat, float lon, String type, float price) {
-        super(name, attendees, lat, lon);
-        this.type = type;
-        this.price = price;
-    }
-
-    public Exhibit(String name, float lat, float lon, String type, float price) {
-        super(name, lat, lon);
-        this.type = type;
-        this.price = price;
+    public Exhibit(String name, float lat, float lon, String category) {
+        super(name, lat, lon, 0, 0);
+        this.category = category;
     }
 
     @Override
     public String toString() {
-        return super.toString();
+        return super.toString() +
+                "\nCategory: " + category +
+                "\nEntry fee: " + getPrice() + "€";
+    }
+
+    public String type() {
+        return "Exhibit";
     }
 }

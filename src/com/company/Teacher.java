@@ -8,12 +8,13 @@ public class Teacher extends Person {
         this.status = status;
     }
 
-    String type() {
-        return null;
+    public String type() {
+        return "Teacher";
     }
 
     @Override
     public String toString() {
-        return super.toString();
+        return super.toString() +
+                "\nStatus: " + status;
     }
 }

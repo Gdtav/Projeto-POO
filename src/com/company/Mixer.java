@@ -3,7 +3,24 @@ package com.company;
 import java.util.ArrayList;
 
 public class Mixer extends Community {
-    private java.util.ArrayList<Location> locations;
+    private ArrayList<Location> locations;
+    private Signups signups;
+
+    public ArrayList<Location> getLocations() {
+        return locations;
+    }
+
+    public void setLocations(ArrayList<Location> locations) {
+        this.locations = locations;
+    }
+
+    public Signups getSignups() {
+        return signups;
+    }
+
+    public void setSignups(Signups signups) {
+        this.signups = signups;
+    }
 
     public Mixer(ArrayList<Person> people, ArrayList<Location> locations) {
         super(people);
@@ -18,12 +35,18 @@ public class Mixer extends Community {
     }
 
     double minRevenue() {
-        return 0;
+        double revenue = 0;
+        for (Location location : locations) {
+            revenue += signups.getRevenue(location);
+        }
+        return revenue;
     }
 
-    void addAttendee(Person person) {
-    }
-
-    void signupLocation(Person person, Location location) {
+    boolean signupLocation(Person person, Location location) {
+        if (location.getCapacity() == 0 || signups.getNumSignups(location) < location.getCapacity()) {
+            signups.addSignup(new Signup(person, location));
+            return true;
+        }
+        return false;
     }
 }
