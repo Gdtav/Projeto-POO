@@ -10,6 +10,17 @@ public class Mixer extends Community {
         return locations;
     }
 
+    boolean loginCheck(int id, String pw){
+        for (Person person: getPeople()) {
+            if (person.getId() == id){
+                if (person.getPassword().equals(pw))
+                    return true;
+                break;
+            }
+        }
+        return false;
+    }
+
     public void setLocations(ArrayList<Location> locations) {
         this.locations = locations;
     }

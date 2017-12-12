@@ -3,7 +3,7 @@ package com.company;
 import java.util.ArrayList;
 
 public class Community {
-    java.util.ArrayList<Person> people;
+    private ArrayList<Person> people;
 
     void addPerson(Person person) {
         people.add(person);
