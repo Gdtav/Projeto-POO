@@ -8,6 +8,11 @@ public class Employee extends Person {
         this.regime = regime;
     }
 
+    public Employee(String name, String profile, String password, int id, String regime) {
+        super(name, profile, password, id);
+        this.regime = regime;
+    }
+
     public String type() {
         return "Employee";
     }

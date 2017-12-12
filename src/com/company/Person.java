@@ -46,6 +46,13 @@ public abstract class Person {
         this.id = id;
     }
 
+    public Person(String name, String profile, String password, int id) {
+        this.name = name;
+        this.profile = profile;
+        this.password = password;
+        this.id = id;
+    }
+
     void signupMixer(Mixer mixer, String password) {
         mixer.addPerson(this);
     }

@@ -7,16 +7,13 @@ public class Main {
 
     public static void main(String[] args) {
         Mixer mixer;
+        LoginWindow loginWindow;
         ArrayList<Person> personArrayList = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
-            personArrayList.add(new Student("joão", "banana", 123, "eng inf"));
-            personArrayList.add(new Student("joana", "banana", 123, "eng inf"));
+            personArrayList.add(new Student("joão", "banana", "my_asdasd", 123, "eng inf"));
+            personArrayList.add(new Student("joana", "banana", "oguicheiramal", 124, "eng inf"));
         }
         mixer = new Mixer(personArrayList, new ArrayList<>());
-        JFrame frame = new JFrame("LoginWindow");
-        frame.setContentPane(new LoginWindow(mixer.getPeople()).panel1);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
+        loginWindow = new LoginWindow("bananas", mixer);
     }
 }
