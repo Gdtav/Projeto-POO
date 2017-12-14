@@ -1,6 +1,8 @@
 package com.company;
 
-public abstract class Location {
+import java.io.Serializable;
+
+public abstract class Location{
     private String name;
     private float lat;
     private float lon;

@@ -1,8 +1,9 @@
 package com.company;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class SportsArea extends Location {
+public class SportsArea extends Location implements Serializable{
     private ArrayList<String> sports;
 
     public SportsArea(String name, float lat, float lon, ArrayList<String> sports) {

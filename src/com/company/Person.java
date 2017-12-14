@@ -2,7 +2,7 @@ package com.company;
 
 import java.util.ArrayList;
 
-public abstract class Person {
+public abstract class Person{
     private String name;
     private String profile;
     private String password = null;

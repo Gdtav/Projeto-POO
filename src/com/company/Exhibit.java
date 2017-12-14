@@ -1,6 +1,8 @@
 package com.company;
 
-public class Exhibit extends Location {
+import java.io.Serializable;
+
+public class Exhibit extends Location implements Serializable{
     private String category;
 
     public Exhibit(String name, float lat, float lon, String category) {

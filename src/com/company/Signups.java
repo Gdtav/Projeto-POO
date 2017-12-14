@@ -1,8 +1,9 @@
 package com.company;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Signups {
+public class Signups implements Serializable{
     private java.util.ArrayList<Signup> pairs;
 
     void addSignup(Signup signup) {

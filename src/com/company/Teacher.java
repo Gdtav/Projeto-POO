@@ -1,6 +1,8 @@
 package com.company;
 
-public class Teacher extends Person {
+import java.io.Serializable;
+
+public class Teacher extends Person implements Serializable{
     private String status;
 
     public Teacher(String name, String profile, int id, String status) {

@@ -1,8 +1,9 @@
 package com.company;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Bar extends Location {
+public class Bar extends Location implements Serializable {
 
     public Bar(String name, float lat, float lon, int capacity, int price) {
         super(name, lat, lon, capacity, price);
