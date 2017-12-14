@@ -15,5 +15,6 @@ public class Main {
         }
         mixer = new Mixer(personArrayList, new ArrayList<>());
         loginWindow = new LoginWindow("bananas", mixer);
+        System.out.println("hue");
     }
 }

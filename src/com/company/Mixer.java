@@ -1,6 +1,7 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public class Mixer extends Community {
     private ArrayList<Location> locations;
@@ -43,6 +44,12 @@ public class Mixer extends Community {
     }
 
     void sortLocations() {
+        getLocations().sort(new Comparator<Location>() {
+            @Override
+            public int compare(Location location, Location t1) {
+                return signups.getNumSignups(location) - signups.getNumSignups(t1);
+            }
+        });
     }
 
     double minRevenue() {
