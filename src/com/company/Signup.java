@@ -1,6 +1,8 @@
 package com.company;
 
-public class Signup {
+import java.io.Serializable;
+
+public class Signup implements Serializable{
     private Person attendee;
     private Location location;
 

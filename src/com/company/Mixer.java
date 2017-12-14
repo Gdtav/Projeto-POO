@@ -1,9 +1,10 @@
 package com.company;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Comparator;
 
-public class Mixer extends Community {
+public class Mixer extends Community implements Serializable{
     private ArrayList<Location> locations;
     private Signups signups;
 

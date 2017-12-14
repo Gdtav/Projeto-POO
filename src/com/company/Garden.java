@@ -1,6 +1,8 @@
 package com.company;
 
-public class Garden extends Location {
+import java.io.Serializable;
+
+public class Garden extends Location implements Serializable{
     private double area;
 
     public Garden(String name, float lat, float lon, double area) {
