@@ -62,7 +62,7 @@ public class LoginWindow extends JFrame {
                 dispose();
             }
         });
-
+        //System.out.println("hello");
         setContentPane(rootPanel);
         setSize(300, 200);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

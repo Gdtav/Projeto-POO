@@ -5,14 +5,16 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class GuestLists extends JFrame{
-    private JLabel titleLabel;
     private JList barList;
     private JButton returnButton;
     private JButton printButton;
+    private JLabel checkLabel;
+    private JPanel rootPanel;
 
-    public GuestLists() {
+    public GuestLists(ArrayList<Bar> bars) {
 
         printButton.addActionListener(new ActionListener() {
             /**
@@ -22,7 +24,9 @@ public class GuestLists extends JFrame{
              */
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                if (!barList.isSelectionEmpty())
+                    System.out.println(bars.get(barList.getSelectedIndex()));
+                else checkLabel.setText("Escolha um bar!");
             }
         });
         returnButton.addActionListener(new ActionListener() {
@@ -36,16 +40,12 @@ public class GuestLists extends JFrame{
                 dispose();
             }
         });
-        barList.addListSelectionListener(new ListSelectionListener() {
-            /**
-             * Called whenever the value of the selection changes.
-             *
-             * @param e the event that characterizes the change.
-             */
-            @Override
-            public void valueChanged(ListSelectionEvent e) {
 
-            }
-        });
+        barList.setListData(bars.toArray());
+
+        setContentPane(rootPanel);
+        setSize(600, 500);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setVisible(true);
     }
 }

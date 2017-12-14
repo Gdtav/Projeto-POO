@@ -22,6 +22,16 @@ public class Mixer extends Community {
         return false;
     }
 
+    public ArrayList<Bar> getBars(){
+        ArrayList<Bar> bars = new ArrayList<>();
+        for (Location location:locations) {
+            if(location.type().equals("Bar")){
+                bars.add((Bar) location);
+            }
+        }
+        return bars;
+    }
+
     public void setLocations(ArrayList<Location> locations) {
         this.locations = locations;
     }
