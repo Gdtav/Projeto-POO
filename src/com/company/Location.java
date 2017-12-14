@@ -1,7 +1,5 @@
 package com.company;
 
-import java.io.Serializable;
-
 public abstract class Location{
     private String name;
     private float lat;
