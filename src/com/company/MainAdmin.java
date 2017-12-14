@@ -5,15 +5,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class MainAdmin extends JFrame{
-    private JButton inscreverPessoaButton;
-    private JButton gerirInscriçõesButton;
+    private JButton newSignupButton;
+    private JButton manageSignupsButton;
     private JButton guestListsButton;
-    private JButton receitasButton;
+    private JButton revenueButton;
     private JButton sairButton;
     private JLabel topLabel;
     private JPanel rootPanel;
 
-    public MainAdmin() {
+    public MainAdmin(Mixer mixer) {
 
         sairButton.addActionListener(new ActionListener() {
             @Override
@@ -26,13 +26,13 @@ public class MainAdmin extends JFrame{
         setSize(300, 200);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
-        inscreverPessoaButton.addActionListener(new ActionListener() {
+        newSignupButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-
+                new NewSignup(mixer);
             }
         });
-        gerirInscriçõesButton.addActionListener(new ActionListener() {
+        manageSignupsButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
 
@@ -44,7 +44,7 @@ public class MainAdmin extends JFrame{
 
             }
         });
-        receitasButton.addActionListener(new ActionListener() {
+        revenueButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
 

@@ -19,7 +19,7 @@ public class LoginWindow extends JFrame {
         try {
             if (userField.getText().equals("admin") && pw.equals(passwordField.getText())) {
                 System.out.println("admin login!");
-                new MainAdmin();
+                new MainAdmin(mixer);
                 System.out.println("lmao");
             } else if (mixer.loginCheck(Integer.valueOf(userField.getText()), passwordField.getText())) {
                 System.out.println("user #" + userField.getText() + " login!");
