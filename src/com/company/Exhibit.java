@@ -23,13 +23,13 @@ public class Exhibit extends Location implements Serializable{
     }
 
     @Override
-    public String toString() {
-        return super.toString() +
-                "\nCategory: " + category +
-                "\nEntry fee: " + getPrice() + "€";
+    public String attributes() {
+        return super.attributes() +
+                "\nCategoria: " + category +
+                "\nTaxa de entrada: " + getPrice() + "€";
     }
 
     public String type() {
-        return "Exhibit";
+        return "Exposição";
     }
 }

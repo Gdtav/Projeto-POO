@@ -22,10 +22,10 @@ public class Bar extends Location implements Serializable {
     }
 
     @Override
-    public String toString() {
-        return super.toString() +
-                "\nCapacity: " + getCapacity() +
-                "\nEntry fee: " + getPrice() + "€";
+    public String attributes() {
+        return super.attributes() +
+                "\nLotação: " + getCapacity() +
+                "\nTaxa de entrada: " + getPrice() + "€";
     }
 
     public String type() {

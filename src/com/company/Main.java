@@ -19,7 +19,7 @@ public class Main {
      */
     public static void main(String[] args) {
         Mixer mixer = new Mixer();
-        ObjectFile objectFile = new ObjectFile();
+        /*ObjectFile objectFile = new ObjectFile();
         try {
             objectFile.openRead("Mixer");
             try {
@@ -93,9 +93,8 @@ public class Main {
                 System.out.println("Não foi possível aceder aos ficheiros de texto! Abortando...");
                 exit(1);
             }
-        }
-        LoginWindow loginWindow;
-        /*
+        }*/
+
         ArrayList<Location> locations = new ArrayList<>();
         locations.add(new Bar("Pintos", 0, 0, 20, 5));
         locations.add(new Bar("Moelas", 0, 0, 20, 5));
@@ -105,12 +104,12 @@ public class Main {
         ArrayList<Person> personArrayList = new ArrayList<>();
         personArrayList.add(new Student("joão", "banana", 123, "eng inf"));
         personArrayList.add(new Student("joana", "banana", 124, "eng inf"));
-        */
+        mixer = new Mixer(personArrayList,locations, new Signups());
         System.out.println("hue");
         //loginWindow = new LoginWindow("bananas", mixer);
         new LoginWindow("bananas", mixer);
         System.out.println("huee");
-        try {
+        /*try {
             objectFile.openWrite("Mixer");
             objectFile.writeObject(mixer);
             objectFile.closeWrite();
@@ -118,6 +117,6 @@ public class Main {
             e.printStackTrace();
             System.out.println("Não foi possivel guardar os dados...");
             exit(1);
-        }
+        }*/
     }
 }

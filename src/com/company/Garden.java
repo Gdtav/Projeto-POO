@@ -22,12 +22,12 @@ public class Garden extends Location implements Serializable{
     }
 
     @Override
-    public String toString() {
-        return super.toString() +
+    public String attributes() {
+        return super.attributes() +
                 "\nArea: " + area + "m²";
     }
 
     public String type() {
-        return "Garden";
+        return "Jardim";
     }
 }

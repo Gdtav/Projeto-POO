@@ -12,6 +12,8 @@ public class MainAdmin extends JFrame{
     private JButton sairButton;
     private JLabel topLabel;
     private JPanel rootPanel;
+    private JButton printLocationsButton;
+    private JButton printPeopleButton;
     private NewSignup newSignup = null;
 
     public MainAdmin(Mixer mixer) {
@@ -47,6 +49,18 @@ public class MainAdmin extends JFrame{
             }
         });
         revenueButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+
+            }
+        });
+        printLocationsButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                new PrintLocations(mixer);
+            }
+        });
+        printPeopleButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
 

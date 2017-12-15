@@ -119,9 +119,14 @@ public abstract class Location{
 
     @Override
     public String toString() {
-        return "Name: " + name +
-                "\nGPS: " + lat + ", " + lon +
-                "\nType: " + type();
+        return type() + " - " + name;
+    }
+
+    public String attributes() {
+        return "Nome: " + getName() +
+                "\nGPS: " + getLon() + ", " + getLat() +
+                "\nTipo: " + type()
+                ;
     }
 
     /**

@@ -23,14 +23,14 @@ public class SportsArea extends Location implements Serializable{
     }
 
     @Override
-    public String toString() {
-        StringBuilder str = new StringBuilder(super.toString() + "Sports:");
+    public String attributes() {
+        StringBuilder str = new StringBuilder(super.attributes() + "Sports:");
         for (String sport : sports)
             str.append("\n- ").append(sport);
         return str.toString();
     }
 
     public String type() {
-        return "Sports Area";
+        return "Área de desporto";
     }
 }

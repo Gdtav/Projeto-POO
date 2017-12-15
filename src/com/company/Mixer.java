@@ -143,6 +143,13 @@ public class Mixer extends Community implements Serializable {
         });
     }
 
+    ArrayList<String> locationsToStrings(ArrayList<Location> list){
+        ArrayList<String> strings = new ArrayList<>();
+        for (Location location: locations)
+            strings.add(location.toString());
+        return strings;
+    }
+
     /**
      * Calculates the minimum revenue expected.
      *
