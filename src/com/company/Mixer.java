@@ -61,9 +61,13 @@ public class Mixer extends Community implements Serializable {
         this.signups = signups;
     }
 
-    public Mixer(ArrayList<Person> people, ArrayList<Location> locations) {
+    public Mixer() {
+    }
+
+    public Mixer(ArrayList<Person> people, ArrayList<Location> locations, Signups signups) {
         super(people);
         this.locations = locations;
+        this.signups = signups;
     }
 
     String showLocations() {

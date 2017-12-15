@@ -21,4 +21,7 @@ public class Community implements Serializable{
     public Community(ArrayList<Person> people) {
         this.people = people;
     }
+
+    public Community() {
+    }
 }
