@@ -91,7 +91,7 @@ public class Mixer extends Community implements Serializable {
     /**
      * Gets signup managing class.
      *
-     * @return signups
+     * @return signups signups
      */
     public Signups getSignups() {
         return signups;
@@ -134,6 +134,11 @@ public class Mixer extends Community implements Serializable {
         return null;
     }
 
+    /**
+     * Sort locations.
+     *
+     * @param list the list
+     */
     void sortLocations(ArrayList<Location> list) {
         list.sort(new Comparator<Location>() {
             @Override

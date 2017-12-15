@@ -87,6 +87,12 @@ public class Signups implements Serializable{
         return people;
     }
 
+    /**
+     * Get person signups array list.
+     *
+     * @param person the person
+     * @return the array list
+     */
     ArrayList<Signup> getPersonSignups(Person person){
         ArrayList<Signup> signups = new ArrayList<>();
         for (Signup signup:pairs)
@@ -94,10 +100,21 @@ public class Signups implements Serializable{
         return signups;
     }
 
+    /**
+     * Remove the signups of the person.
+     *
+     * @param person the person
+     */
     void removePersonSignups(Person person){
         pairs.removeAll(getPersonSignups(person));
     }
 
+    /**
+     * Gets number of signups in the specified location.
+     *
+     * @param location the location
+     * @return the number signups
+     */
     int getNumSignups(Location location) {
         int count = 0;
         for (Signup signup : pairs) {
