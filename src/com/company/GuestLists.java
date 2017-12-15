@@ -13,6 +13,7 @@ public class GuestLists extends JFrame{
     private JButton printButton;
     private JLabel checkLabel;
     private JPanel rootPanel;
+    private JLabel titleLabel;
 
     public GuestLists(ArrayList<Bar> bars) {
 

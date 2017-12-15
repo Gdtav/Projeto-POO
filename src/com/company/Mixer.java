@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Comparator;
 
-public class Mixer extends Community implements Serializable{
+public class Mixer extends Community implements Serializable {
     private ArrayList<Location> locations;
     private Signups signups;
 
@@ -12,9 +12,9 @@ public class Mixer extends Community implements Serializable{
         return locations;
     }
 
-    boolean loginCheck(int id, String pw){
-        for (Person person: getPeople()) {
-            if (person.getId() == id){
+    boolean loginCheck(int id, String pw) {
+        for (Person person : getPeople()) {
+            if (person.getId() == id) {
                 if (person.getPassword().equals(pw))
                     return true;
                 break;
@@ -23,10 +23,26 @@ public class Mixer extends Community implements Serializable{
         return false;
     }
 
-    public ArrayList<Bar> getBars(){
+    public ArrayList<Person> getSignedUp() {
+        ArrayList<Person> people = new ArrayList<>();
+        for (Person person : getPeople()) {
+            if (person.getPassword() != null) people.add(person);
+        }
+        return people;
+    }
+
+    public ArrayList<Location> getFreeLocations() {
+        ArrayList<Location> locations = new ArrayList<>();
+        for (Location location : getLocations()) {
+            if (signups.getNumSignups(location) < location.getCapacity()) locations.add(location);
+        }
+        return locations;
+    }
+
+    public ArrayList<Bar> getBars() {
         ArrayList<Bar> bars = new ArrayList<>();
-        for (Location location:locations) {
-            if(location.type().equals("Bar")){
+        for (Location location : locations) {
+            if (location.type().equals("Bar")) {
                 bars.add((Bar) location);
             }
         }
