@@ -2,6 +2,7 @@ package com.company;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public class Mixer extends Community implements Serializable {
     private ArrayList<Location> locations;
@@ -70,19 +71,12 @@ public class Mixer extends Community implements Serializable {
     }
 
     void sortLocations(ArrayList<Location> list) {
-        int n = list.size();
-        Location temp;
-        for(int i=0; i < n; i++){
-            for(int j=1; j < (n-i); j++){
-                if(signups.getNumSignups(list.get(j-1)) > signups.getNumSignups((list.get(j)))){
-                    //swap elements
-                    temp = list.get(j-1);
-                    list.set(j-1, list.get(j));
-                    list.set(j, temp);
-                }
-
+        list.sort(new Comparator<Location>() {
+            @Override
+            public int compare(Location location, Location location1) {
+                return signups.getNumSignups(location) - signups.getNumSignups(location1);
             }
-        }
+        });
     }
 
     double minRevenue() {
