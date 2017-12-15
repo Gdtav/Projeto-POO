@@ -2,11 +2,10 @@ package com.company;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Comparator;
 
 public class Mixer extends Community implements Serializable {
     private ArrayList<Location> locations;
-    private Signups signups;
+    private Signups signups = new Signups();
 
     public ArrayList<Location> getLocations() {
         return locations;
@@ -34,7 +33,7 @@ public class Mixer extends Community implements Serializable {
     public ArrayList<Location> getFreeLocations() {
         ArrayList<Location> locations = new ArrayList<>();
         for (Location location : getLocations()) {
-            if (signups.getNumSignups(location) < location.getCapacity()) locations.add(location);
+            if (!signups.isFull(location)) locations.add(location);
         }
         return locations;
     }
@@ -70,13 +69,20 @@ public class Mixer extends Community implements Serializable {
         return null;
     }
 
-    void sortLocations() {
-        getLocations().sort(new Comparator<Location>() {
-            @Override
-            public int compare(Location location, Location t1) {
-                return signups.getNumSignups(location) - signups.getNumSignups(t1);
+    void sortLocations(ArrayList<Location> list) {
+        int n = list.size();
+        Location temp;
+        for(int i=0; i < n; i++){
+            for(int j=1; j < (n-i); j++){
+                if(signups.getNumSignups(list.get(j-1)) > signups.getNumSignups((list.get(j)))){
+                    //swap elements
+                    temp = list.get(j-1);
+                    list.set(j-1, list.get(j));
+                    list.set(j, temp);
+                }
+
             }
-        });
+        }
     }
 
     double minRevenue() {

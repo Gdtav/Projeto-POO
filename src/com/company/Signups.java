@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Signups implements Serializable{
-    private java.util.ArrayList<Signup> pairs;
+    private java.util.ArrayList<Signup> pairs = new ArrayList<>();
 
     void addSignup(Signup signup) {
         pairs.add(signup);
@@ -48,6 +48,17 @@ public class Signups implements Serializable{
         return people;
     }
 
+    ArrayList<Signup> getPersonSignups(Person person){
+        ArrayList<Signup> signups = new ArrayList<>();
+        for (Signup signup:pairs)
+            if(person == signup.getAttendee()) signups.add(signup);
+        return signups;
+    }
+
+    void removePersonSignups(Person person){
+        pairs.removeAll(getPersonSignups(person));
+    }
+
     int getNumSignups(Location location) {
         int count = 0;
         for (Signup signup : pairs) {
@@ -58,6 +69,6 @@ public class Signups implements Serializable{
     }
 
     boolean isFull(Location location) {
-        return getNumSignups(location) < location.getCapacity();
+        return location.getCapacity() != 0 && getNumSignups(location) == location.getCapacity();
     }
 }

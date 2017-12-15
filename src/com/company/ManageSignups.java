@@ -10,6 +10,7 @@ public class ManageSignups extends JFrame{
     private JButton returnButton;
     private JList UserList;
     private JLabel subtitleLabel;
+    private JPanel rootPanel;
 
     public ManageSignups(Mixer mixer) {
         ArrayList<Person> people = mixer.getSignedUp();
@@ -38,11 +39,14 @@ public class ManageSignups extends JFrame{
              */
             @Override
             public void actionPerformed(ActionEvent e) {
-                UserList.getSelectedIndex();
+                new ChooseLocations(mixer,people.get(UserList.getSelectedIndex()));
             }
         });
 
-        list();
+        setContentPane(rootPanel);
+        setSize(600, 500);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setVisible(true);
 
     }
 }
