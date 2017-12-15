@@ -1,20 +1,25 @@
 package com.company;
 
 import javax.swing.*;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class ManageSignups extends JFrame{
-    private JButton seguinteButton;
-    private JButton voltarButton;
+    private JButton nextButton;
+    private JButton returnButton;
     private JList UserList;
-    private JLabel titleLabel;
     private JLabel subtitleLabel;
 
-    public ManageSignups() {
-        voltarButton.addActionListener(new ActionListener() {
+    public ManageSignups(Mixer mixer) {
+        ArrayList<Person> people = mixer.getSignedUp();
+        ArrayList<String> choices = new ArrayList<>();
+        for (Person person : people) {
+            choices.add(person.getName() + ", " + person.getId());
+        }
+        UserList.setListData(choices.toArray());
+
+        returnButton.addActionListener(new ActionListener() {
             /**
              * Invoked when an action occurs.
              *
@@ -25,7 +30,7 @@ public class ManageSignups extends JFrame{
                 dispose();
             }
         });
-        seguinteButton.addActionListener(new ActionListener() {
+        nextButton.addActionListener(new ActionListener() {
             /**
              * Invoked when an action occurs.
              *
@@ -36,6 +41,8 @@ public class ManageSignups extends JFrame{
                 UserList.getSelectedIndex();
             }
         });
+
+        list();
 
     }
 }
