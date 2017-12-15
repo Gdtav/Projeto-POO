@@ -3,9 +3,20 @@ package com.company;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+/**
+ * The type Sports area.
+ */
 public class SportsArea extends Location implements Serializable{
     private ArrayList<String> sports;
 
+    /**
+     * Instantiates a new Sports area.
+     *
+     * @param name   the name
+     * @param lat    the lat
+     * @param lon    the lon
+     * @param sports the sports
+     */
     public SportsArea(String name, float lat, float lon, ArrayList<String> sports) {
         super(name, lat, lon, 0, 0);
         this.sports = sports;

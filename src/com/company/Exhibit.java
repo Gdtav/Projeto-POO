@@ -2,11 +2,23 @@ package com.company;
 
 import java.io.Serializable;
 
+/**
+ * The type Exhibit.
+ */
 public class Exhibit extends Location implements Serializable{
     private String category;
 
-    public Exhibit(String name, float lat, float lon, String category) {
-        super(name, lat, lon, 0, 0);
+    /**
+     * Instantiates a new Exhibit.
+     *
+     * @param name     the name
+     * @param lat      the latitude
+     * @param lon      the longitude
+     * @param price    the price
+     * @param category the category of the exhibit
+     */
+    public Exhibit(String name, float lat, float lon, int price, String category) {
+        super(name, lat, lon, 0, price);
         this.category = category;
     }
 

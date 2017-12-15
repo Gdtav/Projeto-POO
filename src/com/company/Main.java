@@ -7,8 +7,16 @@ import java.util.Arrays;
 
 import static java.lang.System.exit;
 
+/**
+ * The type Main.
+ */
 public class Main {
 
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
     public static void main(String[] args) {
         Mixer mixer = new Mixer();
         ObjectFile objectFile = new ObjectFile();
@@ -76,7 +84,7 @@ public class Main {
                 exhibits.openRead("exhibits.txt");
                 while ((string = exhibits.readLine()) != null) {
                     strings = string.split(" ");
-                    locationArrayList.add(new Exhibit(strings[0],Float.parseFloat(strings[1]),Float.parseFloat(strings[2]),strings[3]));
+                    locationArrayList.add(new Exhibit(strings[0],Float.parseFloat(strings[1]),Float.parseFloat(strings[2]),Integer.parseInt(strings[3]),strings[4]));
                 }
                 exhibits.closeRead();
                 mixer.setLocations(locationArrayList);
