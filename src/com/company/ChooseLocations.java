@@ -5,58 +5,52 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-public class ChooseLocations {
-    private JComboBox comboBox1;
-    private JComboBox comboBox2;
-    private JComboBox comboBox3;
-    private JComboBox comboBox4;
-    private JComboBox comboBox5;
-    private JButton button1;
-    private JButton button2;
-    private JButton button3;
-    private JButton button4;
-    private JButton button5;
-    private JButton button6;
+public class ChooseLocations extends JFrame{
+    private JButton OKButton;
+    private JPanel rootPanel;
+    private JList locationList;
+    private JLabel checkLabel;
     private Mixer mixer;
 
-    private void replaceComboBoxItems(JComboBox comboBox, ArrayList<String> strings){
-        comboBox.removeAllItems();
-        for (String string:strings)
-            comboBox.addItem(string);
-    }
-
-    private ArrayList<Location> filterSelected(ArrayList<Location> locations, Location location){
-        ArrayList<Location> list = new ArrayList<>(locations);
-        list.remove(location);
-        return list;
-    }
-
-    private ArrayList<String> locationsToStrings(ArrayList<Location> locations){
+    private ArrayList<String> locationsToStrings(ArrayList<Location> locations) {
         ArrayList<String> strings = new ArrayList<>();
-        mixer.sortLocations();
-        for (Location location:locations)
+        for (Location location : locations)
             strings.add(location.getName() + ", " + Integer.toString(mixer.getSignups().getNumSignups(location)) + "/" + Integer.toString(location.getCapacity()) + ", " + Double.toString(location.getPrice()) + "€");
+        return strings;
     }
 
-    public ChooseLocations(Mixer mixer) {
+    public ChooseLocations(Mixer mixer, Person person) {
         this.mixer = mixer;
-        ArrayList<String> strings = new ArrayList<>();
+        ArrayList<Location> locations = mixer.getFreeLocations();
+        ArrayList<Signup> selectedSignups = mixer.getSignups().getPersonSignups(person);
 
+        for (Signup signup: selectedSignups)
+            if(locations.indexOf(signup.getLocation()) == -1) locations.add(signup.getLocation());
 
-        replaceComboBoxItems(comboBox1, locations);
+        mixer.sortLocations(locations);
+        int[] selectedIndices = new int[selectedSignups.size()];
+        locationList.setListData(locationsToStrings(locations).toArray());
+        for (int i = 0; i < selectedSignups.size(); i++)
+            selectedIndices[i] = locations.indexOf(selectedSignups.get(i).getLocation());
+        locationList.setSelectedIndices(selectedIndices);
 
-        comboBox2.setEnabled(false);
-        comboBox3.setEnabled(false);
-        comboBox4.setEnabled(false);
-        comboBox5.setEnabled(false);
-
-        comboBox1.addActionListener(new ActionListener() {
+        setContentPane(rootPanel);
+        setSize(600, 500);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setVisible(true);
+        OKButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                if(!(comboBox1.getSelectedIndex() == -1))
-
-                    comboBox2.setEnabled(true);
-
+                mixer.getSignups().removePersonSignups(person);
+                int[] indices = locationList.getSelectedIndices();
+                if(indices.length > 5)
+                    checkLabel.setText("Selecione no máximo 5 locais!");
+                else {
+                    for (int index:indices){
+                        mixer.signupLocation(person,locations.get(index));
+                    }
+                    dispose();
+                }
             }
         });
     }

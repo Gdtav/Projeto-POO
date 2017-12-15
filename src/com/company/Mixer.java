@@ -2,14 +2,13 @@ package com.company;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Comparator;
 
 /**
  * The type Mixer. This is the main class which manages the whole event
  */
 public class Mixer extends Community implements Serializable {
     private ArrayList<Location> locations;
-    private Signups signups;
+    private Signups signups = new Signups();
 
     /**
      * Gets locations.
@@ -59,7 +58,7 @@ public class Mixer extends Community implements Serializable {
     public ArrayList<Location> getFreeLocations() {
         ArrayList<Location> locations = new ArrayList<>();
         for (Location location : getLocations()) {
-            if (signups.getNumSignups(location) < location.getCapacity()) locations.add(location);
+            if (!signups.isFull(location)) locations.add(location);
         }
         return locations;
     }
@@ -143,7 +142,7 @@ public class Mixer extends Community implements Serializable {
             public int compare(Location location, Location t1) {
                 return signups.getNumSignups(location) - signups.getNumSignups(t1);
             }
-        });
+        }
     }
 
     /**

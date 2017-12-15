@@ -37,7 +37,7 @@ public class MainAdmin extends JFrame{
         manageSignupsButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-
+                new ManageSignups(mixer);
             }
         });
         guestListsButton.addActionListener(new ActionListener() {
