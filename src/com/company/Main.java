@@ -20,6 +20,7 @@ public class Main {
                 exception.printStackTrace();
                 exit(1);
             }
+            objectFile.closeRead();
         } catch (IOException e) {
             //e.printStackTrace();
             System.out.println("Não foi possivel ler os ficheiros objeto. A abrir ficheiros de texto...");
@@ -98,5 +99,14 @@ public class Main {
         System.out.println("hue");
         loginWindow = new LoginWindow("bananas", mixer);
         System.out.println("huee");
+        try {
+            objectFile.openWrite("Mixer");
+            objectFile.writeObject(mixer);
+            objectFile.closeWrite();
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Não foi possivel guardar os dados...");
+            exit(1);
+        }
     }
 }
