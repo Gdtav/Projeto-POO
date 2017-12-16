@@ -1,0 +1,4 @@
+Jardim Botânico,57.23456,46.76543,50000
+Parque Verde,58.574389,48.92384756,20000
+Parque Dr. Manuel Braga,37.36547,37.5463,18000
+Jardim da Sereia,192.3425,42.28356,2000

@@ -1,0 +1,6 @@
+Machado de Castro,5634.2362,234.236,20,Arte
+Biblioteca Joanina,52.235,23.235,15,Arquitetura
+Alta de Coimbra,34.3245,2345.2345,20,Cultura
+Museu da Água,25.234,234.52,5,Cultura
+Conímbriga,52.234,234.5234,15,História
+Exploratório,6.324,2.345,20,Ciência

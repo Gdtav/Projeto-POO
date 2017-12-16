@@ -1,0 +1,10 @@
+João Patrício,Boémio,1,LEI
+Guilherme Tavares,Boémio,2,LEI
+Joana Mateus,Boémio,3,LDM
+Miguel Antunes,Cultural,4,LEI
+João Santos,Desportivo,5,LDM
+Sara Rodrigues,Desportivo,6,LDM
+António Variações,Poupadinho,7,LEI
+Rita Afonso,Cultural,8,LEI
+Maria Martins,Cultural,9,LDM
+Zulmira Benedita,Desportivo,10,LEI
