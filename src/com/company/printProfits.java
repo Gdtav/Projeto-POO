@@ -18,7 +18,8 @@ public class printProfits extends JFrame{
         return tRevenue;
     }
 
-    public printProfits(Mixer mixer) {
+    public printProfits(Mixer mixer, Signups signups) {
+        valueLabel.setText(Double.toString(getTotalRevenue(mixer, signups)));
         OKButton.addActionListener(new ActionListener() {
             /**
              * Invoked when an action occurs.
