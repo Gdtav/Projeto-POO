@@ -15,7 +15,7 @@ public class GuestLists extends JFrame{
     private JPanel rootPanel;
     private JLabel titleLabel;
 
-    public GuestLists(ArrayList<Bar> bars) {
+    public GuestLists(Mixer mixer, ArrayList<Bar> bars) {
 
         printButton.addActionListener(new ActionListener() {
             /**
@@ -26,7 +26,7 @@ public class GuestLists extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (!barList.isSelectionEmpty())
-                    System.out.println(bars.get(barList.getSelectedIndex()));
+                    new GuestListShow(mixer, bars.get(barList.getSelectedIndex()));
                 else checkLabel.setText("Escolha um bar!");
             }
         });
@@ -46,7 +46,7 @@ public class GuestLists extends JFrame{
 
         setContentPane(rootPanel);
         setSize(600, 500);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setVisible(true);
     }
 }

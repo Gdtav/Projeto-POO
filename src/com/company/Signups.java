@@ -66,11 +66,10 @@ public class Signups implements Serializable{
      * Generates the guest list for the bar.
      *
      * @param bar     the bar
-     * @param percent the percent
      * @return the array list
      */
-    ArrayList<Person> guestList(Bar bar, double percent) {
-        int size = (int) Math.floor(bar.getCapacity() * percent);
+    ArrayList<Person> guestList(Bar bar) {
+        int size = (int) Math.floor(bar.getCapacity() * bar.getCapacityPercent());
         int index = 0;
         ArrayList<Person> people = new ArrayList<>();
         for (Signup signup : pairs) {

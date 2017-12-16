@@ -96,8 +96,8 @@ public class Main {
         }*/
 
         ArrayList<Location> locations = new ArrayList<>();
-        locations.add(new Bar("Pintos", 0, 0, 20, 5));
-        locations.add(new Bar("Moelas", 0, 0, 20, 5));
+        locations.add(new Bar("Pintos", 0, 0, 20, 5, 0.5));
+        locations.add(new Bar("Moelas", 0, 0, 20, 5, 0.6));
         locations.add(new Garden("Parque Verde", 0, 0, 100));
         locations.add(new Garden("Xaroca", 0, 0, 100));
         locations.add(new Garden("Xaroca2", 0, 0, 100));

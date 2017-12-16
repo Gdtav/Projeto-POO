@@ -45,7 +45,7 @@ public class MainAdmin extends JFrame{
         guestListsButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                new GuestLists(mixer.getBars());
+                new GuestLists(mixer, mixer.getBars());
             }
         });
         revenueButton.addActionListener(new ActionListener() {

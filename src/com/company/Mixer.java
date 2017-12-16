@@ -150,8 +150,15 @@ public class Mixer extends Community implements Serializable {
 
     ArrayList<String> locationsToStrings(ArrayList<Location> list){
         ArrayList<String> strings = new ArrayList<>();
-        for (Location location: locations)
+        for (Location location: list)
             strings.add(location.toString());
+        return strings;
+    }
+
+    ArrayList<String> peopleToStrings(ArrayList<Person> list){
+        ArrayList<String> strings = new ArrayList<>();
+        for (Person person: list)
+            strings.add(person.toString());
         return strings;
     }
 
