@@ -15,7 +15,7 @@ public class ChooseLocations extends JFrame{
     private ArrayList<String> locationsToStrings(ArrayList<Location> locations) {
         ArrayList<String> strings = new ArrayList<>();
         for (Location location : locations)
-            strings.add(location.getName() + ", " + Integer.toString(mixer.getSignups().getNumSignups(location)) + "/" + Integer.toString(location.getCapacity()) + ", " + Double.toString(location.getPrice()) + "€");
+            strings.add(location.getName() + ", " + mixer.getSignups().getNumSignups(location) + "/" + location.getCapacity() + ", " + location.getPrice() + "€");
         return strings;
     }
 
@@ -46,8 +46,20 @@ public class ChooseLocations extends JFrame{
                 if(indices.length > 5)
                     checkLabel.setText("Selecione no máximo 5 locais!");
                 else {
-                    for (int index:indices){
-                        mixer.signupLocation(person,locations.get(index));
+                    for (int i = 0; i < selectedIndices.length; i++) {
+                        if(!locationList.isSelectedIndex(selectedIndices[i]))
+                            mixer.getSignups().removeSignup(selectedSignups.get(i));
+                    }
+                    boolean found;
+                    for (int index: locationList.getSelectedIndices()){
+                        found = false;
+                        for (int index1:selectedIndices) {
+                            if(index == index1){
+                                found = true;
+                                break;
+                            }
+                        }
+                        if(!found) mixer.signupLocation(person,locations.get(index));
                     }
                     dispose();
                 }

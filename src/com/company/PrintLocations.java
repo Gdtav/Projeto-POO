@@ -15,6 +15,7 @@ public class PrintLocations extends JFrame{
 
     public PrintLocations(Mixer mixer) {
         infoTextArea.setEditable(false);
+        mixer.sortLocations(mixer.getLocations());
         locationList.setListData(mixer.locationsToStrings(mixer.getLocations()).toArray());
         OKButton.addActionListener(new ActionListener() {
             @Override

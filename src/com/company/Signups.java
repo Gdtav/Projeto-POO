@@ -109,6 +109,10 @@ public class Signups implements Serializable{
         return signups;
     }
 
+    void removeSignup(Signup signup){
+        pairs.remove(signup);
+    }
+
     /**
      * Remove the signups of the person.
      *

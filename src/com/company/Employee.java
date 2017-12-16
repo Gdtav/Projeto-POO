@@ -36,12 +36,12 @@ public class Employee extends Person implements Serializable{
     }
 
     public String type() {
-        return "Employee";
+        return "Funcionário";
     }
 
     @Override
-    public String toString() {
-        return super.toString() +
+    public String attributes() {
+        return super.attributes() +
                 "\nRegime: " + regime;
     }
 }
