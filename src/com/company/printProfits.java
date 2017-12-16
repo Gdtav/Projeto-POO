@@ -22,7 +22,7 @@ public class printProfits extends JFrame{
     public printProfits(Mixer mixer, Signups signups) {
         setContentPane(rootPanel);
         setSize(300, 200);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setVisible(true);
         valueLabel.setText(Double.toString(getTotalRevenue(mixer, signups)));
         OKButton.addActionListener(new ActionListener() {

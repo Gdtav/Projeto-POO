@@ -51,7 +51,7 @@ public class MainAdmin extends JFrame{
         revenueButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-
+                new printProfits(mixer, mixer.getSignups());
             }
         });
         printLocationsButton.addActionListener(new ActionListener() {
