@@ -36,7 +36,7 @@ public class ChooseLocations extends JFrame{
 
         setContentPane(rootPanel);
         setSize(600, 500);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         setVisible(true);
         OKButton.addActionListener(new ActionListener() {
             @Override
