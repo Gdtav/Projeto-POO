@@ -44,7 +44,7 @@ public class Signups implements Serializable{
      * @param location the location
      * @return the revenue
      */
-    double getRevenue(Location location) {
+    public double getRevenue(Location location) {
         double revenue = 0;
         for (Signup signup: pairs) {
             if ((signup.getLocation() == location) && signup.getAttendee().getClass() == Student.class){

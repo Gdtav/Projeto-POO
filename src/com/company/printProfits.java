@@ -10,7 +10,15 @@ public class printProfits extends JFrame{
     private JLabel valueLabel;
 
 
-    public printProfits() {
+    public double getTotalRevenue(Mixer mixer, Signups signups){
+        double tRevenue = 0;
+        for (Location local: mixer.getLocations()) {
+            tRevenue += signups.getRevenue(local);
+        }
+        return tRevenue;
+    }
+
+    public printProfits(Mixer mixer) {
         OKButton.addActionListener(new ActionListener() {
             /**
              * Invoked when an action occurs.
