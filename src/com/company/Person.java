@@ -121,12 +121,16 @@ public abstract class Person{
         mixer.addPerson(this);
     }
 
+    public String attributes() {
+        return "Nome: " + getName() +
+                "\nPerfil: " + getProfile() +
+                "\nID: " + getId() +
+                "\nTipo: " + type();
+    }
+
     @Override
     public String toString() {
-        return "Name: " + getName() +
-                "\nProfile: " + getProfile() +
-                "\nID: " + getId() +
-                "\nType: " + type();
+        return id + " - " + name;
     }
 
     /**

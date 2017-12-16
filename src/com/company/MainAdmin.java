@@ -4,6 +4,8 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import static java.lang.System.exit;
+
 public class MainAdmin extends JFrame{
     private JButton newSignupButton;
     private JButton manageSignupsButton;
@@ -21,12 +23,12 @@ public class MainAdmin extends JFrame{
         sairButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                dispose();
+                exit(0);
             }
         });
 
         setContentPane(rootPanel);
-        setSize(300, 200);
+        setSize(400, 300);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
         newSignupButton.addActionListener(new ActionListener() {
@@ -63,7 +65,7 @@ public class MainAdmin extends JFrame{
         printPeopleButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-
+                new PrintPeople(mixer);
             }
         });
     }

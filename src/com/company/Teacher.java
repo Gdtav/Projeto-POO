@@ -36,12 +36,12 @@ public class Teacher extends Person implements Serializable{
     }
 
     public String type() {
-        return "Teacher";
+        return "Professor";
     }
 
     @Override
-    public String toString() {
-        return super.toString() +
-                "\nStatus: " + status;
+    public String attributes() {
+        return super.attributes() +
+                "\nEstatuto: " + status;
     }
 }
