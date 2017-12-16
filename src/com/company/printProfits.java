@@ -8,6 +8,7 @@ public class printProfits extends JFrame{
     private JLabel titleLabel;
     private JButton OKButton;
     private JLabel valueLabel;
+    private JPanel rootPanel;
 
 
     public double getTotalRevenue(Mixer mixer, Signups signups){
@@ -19,6 +20,10 @@ public class printProfits extends JFrame{
     }
 
     public printProfits(Mixer mixer, Signups signups) {
+        setContentPane(rootPanel);
+        setSize(300, 200);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setVisible(true);
         valueLabel.setText(Double.toString(getTotalRevenue(mixer, signups)));
         OKButton.addActionListener(new ActionListener() {
             /**
