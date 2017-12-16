@@ -9,8 +9,6 @@ public class GuestListShow extends JFrame{
     private JPanel rootPanel;
     private JList peopleList;
     private JButton OKButton;
-    private JButton printToFileButton;
-    private JLabel checkLabel;
 
     public GuestListShow(Mixer mixer, Bar bar) {
         ArrayList<Person> people = mixer.getSignups().guestList(bar);
