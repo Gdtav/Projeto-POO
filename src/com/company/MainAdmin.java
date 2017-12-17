@@ -23,7 +23,7 @@ class MainAdmin extends JFrame {
     private NewSignup newSignup = null;
 
     /**
-     * Instantiates a new Main admin.
+     * Instantiates a new Main admin window.
      *
      * @param mixer the mixer
      */

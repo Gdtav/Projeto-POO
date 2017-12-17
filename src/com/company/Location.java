@@ -39,7 +39,7 @@ public abstract class Location implements Serializable {
     }
 
     /**
-     * Gets lat.
+     * Gets latitude.
      *
      * @return the lat
      */
@@ -48,7 +48,7 @@ public abstract class Location implements Serializable {
     }
 
     /**
-     * Gets lon.
+     * Gets longitude.
      *
      * @return the lon
      */

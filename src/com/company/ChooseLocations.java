@@ -16,7 +16,7 @@ class ChooseLocations extends JFrame {
     private Mixer mixer;
 
     /**
-     * Instantiates a new Choose locations.
+     * Instantiates a new Choose locations window.
      *
      * @param mixer  the mixer
      * @param person the person

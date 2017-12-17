@@ -16,7 +16,7 @@ class PrintPeople extends JFrame {
     private JList peopleList;
 
     /**
-     * Instantiates a new Print people.
+     * Instantiates a new Print people window.
      *
      * @param mixer the mixer
      */

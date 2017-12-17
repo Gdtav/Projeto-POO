@@ -31,7 +31,7 @@ class PrintLocations extends JFrame {
 
 
     /**
-     * Instantiates a new Print locations.
+     * Instantiates a new Print locations window.
      *
      * @param mixer the mixer
      */

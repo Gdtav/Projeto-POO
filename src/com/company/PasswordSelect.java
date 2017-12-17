@@ -15,7 +15,7 @@ class PasswordSelect extends JFrame {
 
 
     /**
-     * Instantiates a new Password select.
+     * Instantiates a new Password select window.
      *
      * @param string the string
      * @param person the person

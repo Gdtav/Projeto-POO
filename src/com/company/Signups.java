@@ -24,7 +24,7 @@ public class Signups implements Serializable {
     }
 
     /**
-     * Gets revenue.
+     * Gets revenue from a specific location.
      *
      * @param location the location
      * @return the revenue
@@ -82,7 +82,7 @@ public class Signups implements Serializable {
     }
 
     /**
-     * Get person signups array list.
+     * Gets the locations in which the person is signed.
      *
      * @param person the person
      * @return the array list

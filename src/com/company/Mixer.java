@@ -9,7 +9,7 @@ import java.util.Comparator;
 import static java.lang.System.exit;
 
 /**
- * The type Mixer. This is the main class which manages the whole event
+ * The type Mixer. This is the main class which manages the whole event.
  */
 class Mixer extends Community implements Serializable {
     private ArrayList<Location> locations;
@@ -163,7 +163,7 @@ class Mixer extends Community implements Serializable {
     }
 
     /**
-     * Gets the list of people wwho are signed up in the event.
+     * Gets the list of people who are signed up in the event.
      *
      * @return the signed up
      */
@@ -289,11 +289,10 @@ class Mixer extends Community implements Serializable {
     }
 
     /**
-     * Checks if a person is signed up to a location.
+     * Signs a person to a location, if possible.
      *
      * @param person   the person
      * @param location the location
-     * @return True or False
      */
     void signupLocation(Person person, Location location) {
         if (location.getCapacity() == 0 || !signups.isFull(location))   //inscreve se não houver limite de pessoas
@@ -301,7 +300,7 @@ class Mixer extends Community implements Serializable {
     }
 
     /**
-     * Get person by id person.
+     * Get person by id.
      *
      * @param id the id
      * @return the person
