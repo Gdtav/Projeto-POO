@@ -34,7 +34,7 @@ public class Signups implements Serializable {
         for (Signup signup : pairs) {
             if (signup.getLocation() == location) {
                 if (location.type().equals("Exposição") && signup.getAttendee().type().equals("Estudante")) {
-                    revenue += (location.getPrice() * 0.9); //aplica desconto caso seja estudante
+                    revenue += (location.getPrice() * 0.9);                                                     //aplica desconto caso seja estudante
                 } else {
                     revenue += location.getPrice();
                 }
@@ -85,12 +85,13 @@ public class Signups implements Serializable {
      * Gets the locations in which the person is signed.
      *
      * @param person the person
-     * @return the array list
+     * @return the array list with the corresponding signups
      */
     ArrayList<Signup> getPersonSignups(Person person) {
         ArrayList<Signup> signups = new ArrayList<>();
         for (Signup signup : pairs)
-            if (person == signup.getAttendee()) signups.add(signup);
+            if (person == signup.getAttendee())
+                signups.add(signup);
         return signups;
     }
 
