@@ -12,7 +12,7 @@ class ObjectFile {
     /**
      * Instantiates a new Object file.
      */
-    public ObjectFile() {
+    ObjectFile() {
     }
 
     /**

@@ -13,14 +13,10 @@ public class Signups implements Serializable {
      * Add signup.
      *
      * @param signup the signup
-     * @return the boolean
      */
-    boolean addSignup(Signup signup) {
-        if (!checkExist(signup)) {  //adiciona se ainda não houver essa inscrição
+    void addSignup(Signup signup) {
+        if (!checkExist(signup))  //adiciona se ainda não houver essa inscrição
             pairs.add(signup);
-            return true;
-        }
-        return false;
     }
 
     /**

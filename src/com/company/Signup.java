@@ -15,7 +15,7 @@ class Signup implements Serializable {
      * @param attendee the attendee
      * @param location the location
      */
-    public Signup(Person attendee, Location location) {
+    Signup(Person attendee, Location location) {
         this.attendee = attendee;
         this.location = location;
     }

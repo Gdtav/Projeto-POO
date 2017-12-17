@@ -16,7 +16,7 @@ public class Student extends Person implements Serializable {
      * @param id      the id
      * @param course  the course
      */
-    public Student(String name, String profile, int id, String course) {
+    Student(String name, String profile, int id, String course) {
         super(name, profile, id);
         this.course = course;
     }

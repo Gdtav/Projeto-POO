@@ -1,7 +1,6 @@
 package com.company;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -10,7 +9,6 @@ import java.io.IOException;
  */
 class textFile {
     private BufferedReader bufferedReader;
-    private BufferedWriter bufferedWriter;
 
     /**
      * Open for read.

@@ -94,7 +94,7 @@ class Mixer extends Community implements Serializable {
                 sports.openRead("sports.txt");
                 while ((string = sports.readLine()) != null) {
                     strings = string.split(",");
-                    locationArrayList.add(new SportsArea(strings[0], Float.parseFloat(strings[1]), Float.parseFloat(strings[2]), new ArrayList<String>(Arrays.asList(strings[3].split(";")))));
+                    locationArrayList.add(new SportsArea(strings[0], Float.parseFloat(strings[1]), Float.parseFloat(strings[2]), new ArrayList<>(Arrays.asList(strings[3].split(";")))));
                 }
                 sports.closeRead();
                 exhibits.openRead("exhibits.txt");

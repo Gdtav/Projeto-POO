@@ -17,7 +17,7 @@ public class SportsArea extends Location implements Serializable {
      * @param lon    the lon
      * @param sports the sports
      */
-    public SportsArea(String name, float lat, float lon, ArrayList<String> sports) {
+    SportsArea(String name, float lat, float lon, ArrayList<String> sports) {
         super(name, lat, lon, 0, 0);
         this.sports = sports;
     }

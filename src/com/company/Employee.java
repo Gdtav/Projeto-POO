@@ -16,7 +16,7 @@ public class Employee extends Person implements Serializable {
      * @param id      the id number
      * @param regime  the regime (Full-time or part-time)
      */
-    public Employee(String name, String profile, int id, String regime) {
+    Employee(String name, String profile, int id, String regime) {
         super(name, profile, id);
         this.regime = regime;
     }

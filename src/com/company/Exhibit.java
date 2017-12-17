@@ -17,7 +17,7 @@ public class Exhibit extends Location implements Serializable {
      * @param price    the price
      * @param category the category of the exhibit
      */
-    public Exhibit(String name, float lat, float lon, int price, String category) {
+    Exhibit(String name, float lat, float lon, int price, String category) {
         super(name, lat, lon, 0, price);
         this.category = category;
     }

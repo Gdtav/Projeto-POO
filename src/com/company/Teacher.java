@@ -16,7 +16,7 @@ public class Teacher extends Person implements Serializable {
      * @param id      the id
      * @param status  the status
      */
-    public Teacher(String name, String profile, int id, String status) {
+    Teacher(String name, String profile, int id, String status) {
         super(name, profile, id);
         this.status = status;
     }
