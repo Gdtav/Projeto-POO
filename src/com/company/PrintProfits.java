@@ -15,7 +15,7 @@ class PrintProfits extends JFrame {
 
 
     /**
-     * Instantiates a new Print profits.
+     * Instantiates a new Print profits window.
      *
      * @param mixer   the mixer
      * @param signups the signups

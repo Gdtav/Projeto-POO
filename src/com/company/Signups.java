@@ -82,7 +82,7 @@ public class Signups implements Serializable {
     }
 
     /**
-     * Get person signups array list.
+     * Gets the locations in which the person is signed.
      *
      * @param person the person
      * @return the array list

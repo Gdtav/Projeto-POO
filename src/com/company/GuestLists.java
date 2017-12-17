@@ -17,7 +17,7 @@ class GuestLists extends JFrame {
     private JLabel titleLabel;
 
     /**
-     * Instantiates a new Guest lists.
+     * Instantiates a new Guest lists windows.
      *
      * @param mixer the mixer
      * @param bars  the bars

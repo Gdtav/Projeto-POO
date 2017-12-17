@@ -17,7 +17,7 @@ class MainUser extends JFrame {
     private JButton exitButton;
 
     /**
-     * Instantiates a new Main user.
+     * Instantiates a new Main user window.
      *
      * @param mixer  the mixer
      * @param person the person

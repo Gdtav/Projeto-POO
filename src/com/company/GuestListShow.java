@@ -14,7 +14,7 @@ class GuestListShow extends JFrame {
     private JButton OKButton;
 
     /**
-     * Instantiates a new Guest list show.
+     * Instantiates a new Guest list show window.
      *
      * @param mixer the mixer
      * @param bar   the bar

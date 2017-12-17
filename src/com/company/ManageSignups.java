@@ -16,7 +16,7 @@ class ManageSignups extends JFrame {
     private JPanel rootPanel;
 
     /**
-     * Instantiates a new Manage signups.
+     * Instantiates a new Manage signups window.
      *
      * @param mixer the mixer
      */
