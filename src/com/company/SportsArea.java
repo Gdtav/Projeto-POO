@@ -24,7 +24,7 @@ public class SportsArea extends Location implements Serializable{
 
     @Override
     public String attributes() {
-        StringBuilder str = new StringBuilder(super.attributes() + "Sports:");
+        StringBuilder str = new StringBuilder(super.attributes() + "\nDesportos:");
         for (String sport : sports)
             str.append("\n- ").append(sport);
         return str.toString();

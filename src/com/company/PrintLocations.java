@@ -25,7 +25,7 @@ public class PrintLocations extends JFrame{
         });
         setContentPane(rootPanel);
         setSize(600, 500);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setVisible(true);
         locationList.addListSelectionListener(new ListSelectionListener() {
             @Override

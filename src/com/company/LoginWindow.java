@@ -22,7 +22,8 @@ public class LoginWindow extends JFrame {
                 new MainAdmin(mixer);
                 dispose();
             } else if (mixer.loginCheck(Integer.valueOf(userField.getText()), passwordField.getText())) {
-                System.out.println("user #" + userField.getText() + " login!");
+                new MainUser(mixer,mixer.getPersonByID(Integer.valueOf(userField.getText())));
+                dispose();
             } else {
                 checkLabel.setText("Combinação id/password desconhecida!");
             }
@@ -32,6 +33,7 @@ public class LoginWindow extends JFrame {
     }
 
     public LoginWindow(String pw, Mixer mixer) {
+
         this.pw = pw;
         this.mixer = mixer;
 

@@ -30,7 +30,7 @@ public class Mixer extends Community implements Serializable {
     boolean loginCheck(int id, String pw) {
         for (Person person : getPeople()) {
             if (person.getId() == id) {
-                if (person.getPassword().equals(pw))
+                if (person.getPassword() != null && person.getPassword().equals(pw))
                     return true;
                 break;
             }
@@ -148,6 +148,15 @@ public class Mixer extends Community implements Serializable {
         });
     }
 
+    void sortLocationsInverted(ArrayList<Location> list) {
+        list.sort(new Comparator<Location>() {
+            @Override
+            public int compare(Location location, Location location1) {
+                return  signups.getNumSignups(location1) - signups.getNumSignups(location);
+            }
+        });
+    }
+
     ArrayList<String> locationsToStrings(ArrayList<Location> list){
         ArrayList<String> strings = new ArrayList<>();
         for (Location location: list)
@@ -183,10 +192,15 @@ public class Mixer extends Community implements Serializable {
      * @return True or False
      */
     boolean signupLocation(Person person, Location location) {
-        if (location.getCapacity() == 0 || signups.getNumSignups(location) < location.getCapacity()) {
-            signups.addSignup(new Signup(person, location));
-            return true;
-        }
-        return false;
+        boolean check = false;
+        if (location.getCapacity() == 0 || signups.getNumSignups(location) < location.getCapacity())
+            check = signups.addSignup(new Signup(person, location));
+        return check;
+    }
+
+    Person getPersonByID(int id){
+        for (Person person:getPeople())
+            if(person.getId() == id) return person;
+        return null;
     }
 }

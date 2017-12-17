@@ -51,16 +51,8 @@ public class ChooseLocations extends JFrame{
                             mixer.getSignups().removeSignup(selectedSignups.get(i));
                     }
                     boolean found;
-                    for (int index: locationList.getSelectedIndices()){
-                        found = false;
-                        for (int index1:selectedIndices) {
-                            if(index == index1){
-                                found = true;
-                                break;
-                            }
-                        }
-                        if(!found) mixer.signupLocation(person,locations.get(index));
-                    }
+                    for (int index: locationList.getSelectedIndices())
+                        mixer.signupLocation(person,locations.get(index));
                     dispose();
                 }
             }

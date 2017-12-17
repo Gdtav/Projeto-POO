@@ -14,8 +14,12 @@ public class Signups implements Serializable{
      *
      * @param signup the signup
      */
-    void addSignup(Signup signup) {
-        pairs.add(signup);
+    boolean addSignup(Signup signup) {
+        if(!checkExist(signup)){
+            pairs.add(signup);
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -66,7 +70,7 @@ public class Signups implements Serializable{
      */
     boolean checkExist(Signup signup) {
         for (Signup sign : pairs) {
-            if (sign.getLocation() == sign.getLocation() && sign.getAttendee() == signup.getAttendee())
+            if (sign.getLocation() == signup.getLocation() && sign.getAttendee() == signup.getAttendee())
                 return true;
         }
         return false;
