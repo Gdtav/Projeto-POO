@@ -102,7 +102,7 @@ public class Main {
         locations.add(new Garden("Xaroca", 0, 0, 100));
         locations.add(new Garden("Xaroca2", 0, 0, 100));
         ArrayList<Person> personArrayList = new ArrayList<>();
-        personArrayList.add(new Student("joão", "banana", 123, "eng inf"));
+        personArrayList.add(new Student("joão", "banana", "bananazinha", 123, "eng inf"));
         personArrayList.add(new Student("joana", "banana", 124, "eng inf"));
         mixer = new Mixer(personArrayList,locations, new Signups());
         System.out.println("hue");
