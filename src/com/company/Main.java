@@ -21,7 +21,7 @@ public class Main {
         Mixer mixer = new Mixer();
         ObjectFile objectFile = new ObjectFile();
         try {
-            objectFile.openRead("Mixer.obj");
+            objectFile.openRead("Mixer");
             try {
                 mixer = (Mixer) objectFile.readObject();
             } catch (ClassNotFoundException exception) {
@@ -30,7 +30,7 @@ public class Main {
             }
             objectFile.closeRead();
         } catch (IOException e) {
-            //e.printStackTrace();
+            e.printStackTrace();
             System.out.println("Não foi possivel ler os ficheiros objeto. A abrir ficheiros de texto...");
             String []strings;
             String string;
@@ -111,15 +111,5 @@ public class Main {
         System.out.println("hue");*/
         //loginWindow = new LoginWindow("bananas", mixer);
         new LoginWindow("bananas", mixer);
-        System.out.println("huee");
-        try {
-            objectFile.openWrite("Mixer.obj");
-            objectFile.writeObject(mixer);
-            objectFile.closeWrite();
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.out.println("Não foi possivel guardar os dados...");
-            exit(1);
-        }
     }
 }

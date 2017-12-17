@@ -52,7 +52,7 @@ public class Signups implements Serializable{
         double revenue = 0;
         for (Signup signup: pairs) {
             if (signup.getLocation()== location) {
-                if (location.type().equals("Exibição") && signup.getAttendee().type().equals("Student")) {
+                if (location.type().equals("Exposição") && signup.getAttendee().type().equals("Estudante")) {
                     revenue += (location.getPrice() * 0.9);
                 } else {
                     revenue += location.getPrice();

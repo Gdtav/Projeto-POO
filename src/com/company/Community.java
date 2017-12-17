@@ -6,7 +6,7 @@ import java.util.ArrayList;
 /**
  * The type Community.
  */
-public class Community implements Serializable{
+public abstract class Community implements Serializable{
     private ArrayList<Person> people;
 
     /**

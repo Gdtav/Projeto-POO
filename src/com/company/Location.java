@@ -1,9 +1,11 @@
 package com.company;
 
+import java.io.Serializable;
+
 /**
  * The type Location. This is an abstract class to hold common locations' elements.
  */
-public abstract class Location{
+public abstract class Location implements Serializable{
     private String name;
     private float lat;
     private float lon;

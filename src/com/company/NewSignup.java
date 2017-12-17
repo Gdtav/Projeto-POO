@@ -13,6 +13,7 @@ public class NewSignup extends JFrame {
     private JTextField idTextField;
     private JButton selectListButton;
     private JButton exitButton;
+    private JLabel checkLabel;
 
     private void selectFromList() {
 
@@ -41,6 +42,22 @@ public class NewSignup extends JFrame {
                 if (mouseEvent.getClickCount() >= 2) {
                     new passwordSelect("Selecione Password", notSignups.get(peopleList.getSelectedIndex()));
                     dispose();
+                }
+            }
+        });
+        selectListButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                try {
+                    Person person;
+                    if ((person = mixer.getPersonByID(Integer.valueOf(idTextField.getText()))) != null) {
+                        new passwordSelect("Selecione Password", mixer.getPersonByID(Integer.valueOf(idTextField.getText())));
+                        dispose();
+                    }
+                    else
+                        checkLabel.setText("ID desconhecido!");
+                } catch (NumberFormatException nExc) {
+                    checkLabel.setText("Insira um ID válido!");
                 }
             }
         });

@@ -1,11 +1,12 @@
 package com.company;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * The type Person. this is an abstract class to hold common people's elements.
  */
-public abstract class Person{
+public abstract class Person implements Serializable{
     private String name;
     private String profile;
     private String password = null;

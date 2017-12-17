@@ -3,6 +3,7 @@ package com.company;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 import static java.lang.System.exit;
 
@@ -11,7 +12,7 @@ public class MainAdmin extends JFrame{
     private JButton manageSignupsButton;
     private JButton guestListsButton;
     private JButton revenueButton;
-    private JButton sairButton;
+    private JButton exitButton;
     private JLabel topLabel;
     private JPanel rootPanel;
     private JButton printLocationsButton;
@@ -20,9 +21,19 @@ public class MainAdmin extends JFrame{
 
     public MainAdmin(Mixer mixer) {
 
-        sairButton.addActionListener(new ActionListener() {
+        exitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
+                ObjectFile objectFile = new ObjectFile();
+                try {
+                    objectFile.openWrite("Mixer");
+                    objectFile.writeObject(mixer);
+                    objectFile.closeWrite();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    System.out.println("Não foi possivel guardar os dados...");
+                    exit(1);
+                }
                 exit(0);
             }
         });

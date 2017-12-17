@@ -11,20 +11,12 @@ public class printProfits extends JFrame{
     private JPanel rootPanel;
 
 
-    public double getTotalRevenue(Mixer mixer, Signups signups){
-        double tRevenue = 0;
-        for (Location local: mixer.getLocations()) {
-            tRevenue += signups.getRevenue(local);
-        }
-        return tRevenue;
-    }
-
     public printProfits(Mixer mixer, Signups signups) {
         setContentPane(rootPanel);
         setSize(300, 200);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setVisible(true);
-        valueLabel.setText(Double.toString(getTotalRevenue(mixer, signups)));
+        valueLabel.setText(Double.toString(mixer.minRevenue()));
         OKButton.addActionListener(new ActionListener() {
             /**
              * Invoked when an action occurs.
