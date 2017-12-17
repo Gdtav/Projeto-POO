@@ -14,6 +14,20 @@ class PrintLocations extends JFrame {
     private JList locationList;
     private JButton OKButton;
     private JTextArea infoTextArea;
+    private JButton invertButton;
+    private boolean invert = false;
+
+    private void setData(Mixer mixer) {
+        if (invert) {
+            mixer.sortLocations(mixer.getLocations());
+            invert = false;
+        } else {
+            mixer.sortLocationsInverted(mixer.getLocations());
+            invert = true;
+        }
+        locationList.setListData(mixer.locationsToStrings(mixer.getLocations()).toArray());
+        infoTextArea.setText("");
+    }
 
 
     /**
@@ -22,9 +36,9 @@ class PrintLocations extends JFrame {
      * @param mixer the mixer
      */
     public PrintLocations(Mixer mixer) {
+        locationList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         infoTextArea.setEditable(false);
-        mixer.sortLocations(mixer.getLocations());
-        locationList.setListData(mixer.locationsToStrings(mixer.getLocations()).toArray());
+        setData(mixer);
         OKButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -39,6 +53,12 @@ class PrintLocations extends JFrame {
             @Override
             public void valueChanged(ListSelectionEvent listSelectionEvent) {
                 infoTextArea.setText(mixer.getLocations().get(locationList.getSelectedIndex()).attributes());
+            }
+        });
+        invertButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                setData(mixer);
             }
         });
     }

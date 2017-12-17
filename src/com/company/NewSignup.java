@@ -19,11 +19,12 @@ class NewSignup extends JFrame {
     private JLabel checkLabel;
 
     /**
-     * Instantiates a new New signup.
+     * Instantiates a new New Signup window.
      *
      * @param mixer the mixer
      */
     public NewSignup(Mixer mixer) {
+        peopleList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         ArrayList<Person> people = mixer.getPeople();
         ArrayList<Person> notSignups = new ArrayList<>();
         ArrayList<String> choices = new ArrayList<>();
@@ -62,6 +63,12 @@ class NewSignup extends JFrame {
                 } catch (NumberFormatException nExc) {
                     checkLabel.setText("Insira um ID válido!");
                 }
+            }
+        });
+        exitButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                dispose();
             }
         });
     }

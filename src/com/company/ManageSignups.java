@@ -11,7 +11,7 @@ import java.util.ArrayList;
 class ManageSignups extends JFrame {
     private JButton nextButton;
     private JButton returnButton;
-    private JList UserList;
+    private JList userList;
     private JLabel subtitleLabel;
     private JPanel rootPanel;
 
@@ -21,12 +21,13 @@ class ManageSignups extends JFrame {
      * @param mixer the mixer
      */
     public ManageSignups(Mixer mixer) {
+        userList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         ArrayList<Person> people = mixer.getSignedUp();
         ArrayList<String> choices = new ArrayList<>();
         for (Person person : people) {
             choices.add(person.getName() + ", " + person.getId());
         }
-        UserList.setListData(choices.toArray());
+        userList.setListData(choices.toArray());
 
         returnButton.addActionListener(new ActionListener() {
             /**
@@ -47,7 +48,7 @@ class ManageSignups extends JFrame {
              */
             @Override
             public void actionPerformed(ActionEvent e) {
-                new ChooseLocations(mixer, people.get(UserList.getSelectedIndex()));
+                new ChooseLocations(mixer, people.get(userList.getSelectedIndex()));
             }
         });
 
