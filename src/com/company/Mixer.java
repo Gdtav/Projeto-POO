@@ -237,9 +237,9 @@ class Mixer extends Community implements Serializable {
     }
 
     /**
-     * Locations to strings array list.
+     * ArrayList of converted strings.
      *
-     * @param list the list
+     * @param list the location list
      * @return the array list
      */
     ArrayList<String> locationsToStrings(ArrayList<Location> list) {
@@ -250,9 +250,9 @@ class Mixer extends Community implements Serializable {
     }
 
     /**
-     * People to strings array list.
+     * ArrayList of converted strings.
      *
-     * @param list the list
+     * @param list the people list
      * @return the array list
      */
     ArrayList<String> peopleToStrings(ArrayList<Person> list) {
