@@ -111,19 +111,6 @@ class Mixer extends Community implements Serializable {
                 new ErrorWindow();
             }
         }
-
-        /*ArrayList<Location> locations = new ArrayList<>();
-        locations.add(new Bar("Pintos", 0, 0, 20, 5, 0.5));
-        locations.add(new Bar("Moelas", 0, 0, 20, 5, 0.6));
-        locations.add(new Garden("Parque Verde", 0, 0, 100));
-        locations.add(new Garden("Xaroca", 0, 0, 100));
-        locations.add(new Garden("Xaroca2", 0, 0, 100));
-        ArrayList<Person> personArrayList = new ArrayList<>();
-        personArrayList.add(new Student("joão", "banana", "bananazinha", 123, "eng inf"));
-        personArrayList.add(new Student("joana", "banana", 124, "eng inf"));
-        mixer = new Mixer(personArrayList,locations, new Signups());
-        System.out.println("hue");*/
-        //loginWindow = new LoginWindow("bananas", mixer);
     }
 
     /**
