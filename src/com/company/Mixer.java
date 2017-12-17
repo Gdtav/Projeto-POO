@@ -9,7 +9,12 @@ import java.util.Comparator;
  */
 public class Mixer extends Community implements Serializable {
     private ArrayList<Location> locations;
-    private Signups signups = new Signups();
+    private Signups signups;
+
+    @Override
+    public void addPerson(Person person) {
+        getPeople().add(person);
+    }
 
     /**
      * Gets locations.
@@ -110,6 +115,9 @@ public class Mixer extends Community implements Serializable {
      * Instantiates a new Mixer.
      */
     public Mixer() {
+        setPeople(new ArrayList<>());
+        setLocations(new ArrayList<>());
+        setSignups(new Signups());
     }
 
     /**

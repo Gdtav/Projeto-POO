@@ -1,0 +1,4 @@
+Santa Cruz,24.234,25.235,Futebol;Futsal
+Piscinas Mondego,254.234,2352.3246,Natação;Pólo Aquático
+Estádio Universitário,235.234,235.324,Futebol;Rugby;Atletismo;Judo;Ténis
+Estádio Municipal,64.45,65.345,Futebol;Judo;Ginástica;Atletismo

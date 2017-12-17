@@ -1,0 +1,10 @@
+Nuno Pimenta,Boémio,91,Catedrático
+Miguel Antunes,Cultural,92,Associado
+Rodrigo Serafim,Desportivo,93,Auxiliar
+Luísa Sobral,Poupadinho,94,Associado
+Ernesto Costa,Boémio,95,Catedrático
+Vasco Santos,Cultural,96,Catedrático
+Maria Vieira,Poupadinho,97,Auxiliar
+Tiago Morgado,Cultural,98,Associado
+Jorge Granjal,Boémio,99,Auxiliar
+Manuel Silva,Poupadinho,910,Associado

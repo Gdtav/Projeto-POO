@@ -1,0 +1,10 @@
+Maria Maria,Poupadinho,51,Integral
+Catarina Sousa,Desportivo,52,Parcial
+Cátia Vanessa,Cultural,53,Parcial
+Jorge Sousa,Desportivo,54,Integral
+Joana Reis,Poupadinho,55,Integral
+Pedro António,Boémio,56,Parcial
+Rita Flores,Desportivo,57,Integral
+Carolina Azeitão,Poupadinho,58,Integral
+Mário Alfaiate,Poupadinho,59,Integral
+Manuel Videira,Cultural,510,Parcial

@@ -14,7 +14,7 @@ public class Community implements Serializable{
      *
      * @param person the person
      */
-    void addPerson(Person person) {
+    public void addPerson(Person person) {
         people.add(person);
     }
 
