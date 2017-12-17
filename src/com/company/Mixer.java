@@ -131,7 +131,7 @@ class Mixer extends Community implements Serializable {
      *
      * @return the locations
      */
-    public ArrayList<Location> getLocations() {
+    ArrayList<Location> getLocations() {
         return locations;
     }
 
@@ -154,8 +154,8 @@ class Mixer extends Community implements Serializable {
     boolean loginCheck(int id, String pw) {
         for (Person person : getPeople()) {
             if (person.getId() == id) {
-                if (person.getPassword() != null && person.getPassword().equals(pw))
-                    return true;
+                if (person.getPassword() != null && person.getPassword().equals(pw))    //if the id exists with the password specified,
+                    return true;                                                        //login is valid
                 break;
             }
         }
@@ -167,7 +167,7 @@ class Mixer extends Community implements Serializable {
      *
      * @return the signed up
      */
-    public ArrayList<Person> getSignedUp() {
+    ArrayList<Person> getSignedUp() {
         ArrayList<Person> people = new ArrayList<>();
         for (Person person : getPeople()) {
             if (person.getPassword() != null) people.add(person);
@@ -180,7 +180,7 @@ class Mixer extends Community implements Serializable {
      *
      * @return those locations
      */
-    public ArrayList<Location> getFreeLocations() {
+    ArrayList<Location> getFreeLocations() {
         ArrayList<Location> locations = new ArrayList<>();
         for (Location location : getLocations()) {
             if (!signups.isFull(location)) locations.add(location);
@@ -193,7 +193,7 @@ class Mixer extends Community implements Serializable {
      *
      * @return the bars
      */
-    public ArrayList<Bar> getBars() {
+    ArrayList<Bar> getBars() {
         ArrayList<Bar> bars = new ArrayList<>();
         for (Location location : locations) {
             if (location.type().equals("Bar")) {
@@ -208,7 +208,7 @@ class Mixer extends Community implements Serializable {
      *
      * @return signups signups
      */
-    public Signups getSignups() {
+    Signups getSignups() {
         return signups;
     }
 
@@ -231,6 +231,20 @@ class Mixer extends Community implements Serializable {
             @Override
             public int compare(Location location, Location location1) {
                 return signups.getNumSignups(location) - signups.getNumSignups(location1);
+            }
+        });
+    }
+
+    /**
+     * Sort locations inverted.
+     *
+     * @param list the list
+     */
+    void sortLocationsInverted(ArrayList<Location> list) {
+        list.sort(new Comparator<Location>() {
+            @Override
+            public int compare(Location location, Location location1) {
+                return signups.getNumSignups(location1) - signups.getNumSignups(location);
             }
         });
     }

@@ -23,7 +23,7 @@ class GuestLists extends JFrame {
      * @param bars  the bars
      */
     public GuestLists(Mixer mixer, ArrayList<Bar> bars) {
-
+        barList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         printButton.addActionListener(new ActionListener() {
             /**
              * Invoked when an action occurs.

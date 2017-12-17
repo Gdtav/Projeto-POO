@@ -21,6 +21,7 @@ class PrintPeople extends JFrame {
      * @param mixer the mixer
      */
     public PrintPeople(Mixer mixer) {
+        peopleList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         infoTextArea.setEditable(false);
         peopleList.setListData(mixer.peopleToStrings(mixer.getPeople()).toArray());
         OKButton.addActionListener(new ActionListener() {
