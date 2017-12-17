@@ -104,10 +104,11 @@ class Mixer extends Community implements Serializable {
                 }
                 exhibits.closeRead();
                 mixer.setLocations(locationArrayList);
+                new LoginWindow("bananas", mixer);
             } catch (IOException e1) {
                 //e1.printStackTrace();
                 System.out.println("Não foi possível aceder aos ficheiros de texto! Abortando...");
-                exit(1);
+                new ErrorWindow();
             }
         }
 
@@ -123,7 +124,6 @@ class Mixer extends Community implements Serializable {
         mixer = new Mixer(personArrayList,locations, new Signups());
         System.out.println("hue");*/
         //loginWindow = new LoginWindow("bananas", mixer);
-        new LoginWindow("bananas", mixer);
     }
 
     /**
@@ -145,7 +145,7 @@ class Mixer extends Community implements Serializable {
     }
 
     /**
-     * Login check.
+     * Checks validity of a login.
      *
      * @param id the id of the person
      * @param pw the password
@@ -296,8 +296,8 @@ class Mixer extends Community implements Serializable {
      * @return True or False
      */
     void signupLocation(Person person, Location location) {
-        if (location.getCapacity() == 0 || signups.getNumSignups(location) < location.getCapacity())
-            signups.addSignup(new Signup(person, location));
+        if (location.getCapacity() == 0 || !signups.isFull(location))   //inscreve se não houver limite de pessoas
+            signups.addSignup(new Signup(person, location));            //ou se ainda não estiver cheio
     }
 
     /**

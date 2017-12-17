@@ -16,7 +16,7 @@ public class Signups implements Serializable {
      * @return the boolean
      */
     boolean addSignup(Signup signup) {
-        if (!checkExist(signup)) {
+        if (!checkExist(signup)) {  //adiciona se ainda não houver essa inscrição
             pairs.add(signup);
             return true;
         }
@@ -34,7 +34,7 @@ public class Signups implements Serializable {
         for (Signup signup : pairs) {
             if (signup.getLocation() == location) {
                 if (location.type().equals("Exposição") && signup.getAttendee().type().equals("Estudante")) {
-                    revenue += (location.getPrice() * 0.9);
+                    revenue += (location.getPrice() * 0.9); //aplica desconto caso seja estudante
                 } else {
                     revenue += location.getPrice();
                 }
@@ -69,8 +69,8 @@ public class Signups implements Serializable {
         ArrayList<Person> people = new ArrayList<>();
         for (Signup signup : pairs) {
             if (signup.getLocation() == bar) {
-                if (signup.getAttendee().getProfile().equals("Boémio")) {
-                    people.add(index, signup.getAttendee());
+                if (signup.getAttendee().getProfile().equals("Boémio")) {   //no caso de a pessoa em questão ter perfil boémio
+                    people.add(index, signup.getAttendee());                //coloca-a a seguir aos outros boémios
                     if (people.size() > size) people.remove(size);
                     index++;
                 } else if (people.size() < size)
