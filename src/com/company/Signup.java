@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * The type Signup. This class is a wrapper for a person/location pair
  */
-public class Signup implements Serializable{
+class Signup implements Serializable {
     private Person attendee;
     private Location location;
 
@@ -30,15 +30,6 @@ public class Signup implements Serializable{
     }
 
     /**
-     * Sets attendee.
-     *
-     * @param attendee the attendee
-     */
-    public void setAttendee(Person attendee) {
-        this.attendee = attendee;
-    }
-
-    /**
      * Gets location.
      *
      * @return the location
@@ -47,12 +38,4 @@ public class Signup implements Serializable{
         return location;
     }
 
-    /**
-     * Sets location.
-     *
-     * @param location the location
-     */
-    public void setLocation(Location location) {
-        this.location = location;
-    }
 }

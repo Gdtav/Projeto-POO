@@ -4,7 +4,10 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class LoginWindow extends JFrame {
+/**
+ * The type Login window.
+ */
+class LoginWindow extends JFrame {
     private JButton loginButton;
     private JTextField userField;
     private JTextField passwordField;
@@ -15,23 +18,12 @@ public class LoginWindow extends JFrame {
     private String pw;
     private Mixer mixer;
 
-    void loginAction() {
-        try {
-            if (userField.getText().equals("admin") && pw.equals(passwordField.getText())) {
-                System.out.println("admin login!");
-                new MainAdmin(mixer);
-                dispose();
-            } else if (mixer.loginCheck(Integer.valueOf(userField.getText()), passwordField.getText())) {
-                new MainUser(mixer,mixer.getPersonByID(Integer.valueOf(userField.getText())));
-                dispose();
-            } else {
-                checkLabel.setText("Combinação id/password desconhecida!");
-            }
-        } catch (NumberFormatException nExc) {
-            checkLabel.setText("Id inválido!");
-        }
-    }
-
+    /**
+     * Instantiates a new Login window.
+     *
+     * @param pw    the pw
+     * @param mixer the mixer
+     */
     public LoginWindow(String pw, Mixer mixer) {
 
         this.pw = pw;
@@ -69,5 +61,22 @@ public class LoginWindow extends JFrame {
         setSize(300, 200);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
+    }
+
+    private void loginAction() {
+        try {
+            if (userField.getText().equals("admin") && pw.equals(passwordField.getText())) {
+                System.out.println("admin login!");
+                new MainAdmin(mixer);
+                dispose();
+            } else if (mixer.loginCheck(Integer.valueOf(userField.getText()), passwordField.getText())) {
+                new MainUser(mixer, mixer.getPersonByID(Integer.valueOf(userField.getText())));
+                dispose();
+            } else {
+                checkLabel.setText("Combinação id/password desconhecida!");
+            }
+        } catch (NumberFormatException nExc) {
+            checkLabel.setText("Id inválido!");
+        }
     }
 }

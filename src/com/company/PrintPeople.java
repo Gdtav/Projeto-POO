@@ -6,12 +6,20 @@ import javax.swing.event.ListSelectionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class PrintPeople extends JFrame{
+/**
+ * The type Print people.
+ */
+class PrintPeople extends JFrame {
     private JPanel rootPanel;
     private JTextArea infoTextArea;
     private JButton OKButton;
     private JList peopleList;
 
+    /**
+     * Instantiates a new Print people.
+     *
+     * @param mixer the mixer
+     */
     public PrintPeople(Mixer mixer) {
         infoTextArea.setEditable(false);
         peopleList.setListData(mixer.peopleToStrings(mixer.getPeople()).toArray());

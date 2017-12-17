@@ -5,11 +5,20 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-public class GuestListShow extends JFrame{
+/**
+ * The type Guest list show.
+ */
+class GuestListShow extends JFrame {
     private JPanel rootPanel;
     private JList peopleList;
     private JButton OKButton;
 
+    /**
+     * Instantiates a new Guest list show.
+     *
+     * @param mixer the mixer
+     * @param bar   the bar
+     */
     public GuestListShow(Mixer mixer, Bar bar) {
         ArrayList<Person> people = mixer.getSignups().guestList(bar);
         ArrayList<String> strings = mixer.peopleToStrings(people);

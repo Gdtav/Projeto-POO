@@ -6,13 +6,21 @@ import javax.swing.event.ListSelectionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class PrintLocations extends JFrame{
+/**
+ * The type Print locations.
+ */
+class PrintLocations extends JFrame {
     private JPanel rootPanel;
     private JList locationList;
     private JButton OKButton;
     private JTextArea infoTextArea;
 
 
+    /**
+     * Instantiates a new Print locations.
+     *
+     * @param mixer the mixer
+     */
     public PrintLocations(Mixer mixer) {
         infoTextArea.setEditable(false);
         mixer.sortLocations(mixer.getLocations());

@@ -3,15 +3,24 @@ package com.company;
 import javax.swing.*;
 import java.awt.event.*;
 
-public class passwordSelect extends JFrame {
+/**
+ * The type Password select.
+ */
+class PasswordSelect extends JFrame {
     private JButton buttonOK;
     private JTextField passwordTextField;
     private JLabel checkLabel;
     private JPanel rootPanel;
-    Person person;
+    private Person person;
 
 
-    public passwordSelect(String string, Person person) {
+    /**
+     * Instantiates a new Password select.
+     *
+     * @param string the string
+     * @param person the person
+     */
+    public PasswordSelect(String string, Person person) {
         super(string);
         this.person = person;
         getRootPane().setDefaultButton(buttonOK);

@@ -4,14 +4,23 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class printProfits extends JFrame{
+/**
+ * The type Print profits.
+ */
+class PrintProfits extends JFrame {
     private JLabel titleLabel;
     private JButton OKButton;
     private JLabel valueLabel;
     private JPanel rootPanel;
 
 
-    public printProfits(Mixer mixer, Signups signups) {
+    /**
+     * Instantiates a new Print profits.
+     *
+     * @param mixer   the mixer
+     * @param signups the signups
+     */
+    public PrintProfits(Mixer mixer, Signups signups) {
         setContentPane(rootPanel);
         setSize(300, 200);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

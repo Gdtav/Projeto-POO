@@ -6,7 +6,7 @@ import java.util.ArrayList;
 /**
  * The type Sports area.
  */
-public class SportsArea extends Location implements Serializable{
+public class SportsArea extends Location implements Serializable {
     private ArrayList<String> sports;
 
     /**

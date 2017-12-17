@@ -1,7 +1,6 @@
 package com.company;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 
 /**
  * The type Bar.
@@ -12,24 +11,25 @@ public class Bar extends Location implements Serializable {
     /**
      * Instantiates a new Bar.
      *
-     * @param name     the name
-     * @param lat      the latitude
-     * @param lon      the longitude
-     * @param capacity the capacity
-     * @param price    the entry fee
-     * @param capacityPercent    Percentage of capacity to get into guestlist
+     * @param name            the name
+     * @param lat             the latitude
+     * @param lon             the longitude
+     * @param capacity        the capacity
+     * @param price           the entry fee
+     * @param capacityPercent Percentage of capacity to get into guestlist
      */
     public Bar(String name, float lat, float lon, int capacity, int price, double capacityPercent) {
         super(name, lat, lon, capacity, price);
         this.capacityPercent = capacityPercent;
     }
 
+    /**
+     * Gets capacity percent.
+     *
+     * @return the capacity percent
+     */
     public double getCapacityPercent() {
         return capacityPercent;
-    }
-
-    public void setCapacityPercent(double capacityPercent) {
-        this.capacityPercent = capacityPercent;
     }
 
     @Override

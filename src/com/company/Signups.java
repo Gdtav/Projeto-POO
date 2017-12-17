@@ -6,40 +6,21 @@ import java.util.ArrayList;
 /**
  * The type Signups. This class manages the Signup pairs.
  */
-public class Signups implements Serializable{
+public class Signups implements Serializable {
     private java.util.ArrayList<Signup> pairs = new ArrayList<>();
 
     /**
      * Add signup.
      *
      * @param signup the signup
+     * @return the boolean
      */
     boolean addSignup(Signup signup) {
-        if(!checkExist(signup)){
+        if (!checkExist(signup)) {
             pairs.add(signup);
             return true;
         }
         return false;
-    }
-
-    /**
-     * Gets attendees.
-     *
-     * @param location the location
-     * @return the attendees
-     */
-    ArrayList<Person> getAttendees(Location location) {
-        return null;
-    }
-
-    /**
-     * Gets signups.
-     *
-     * @param attendee the attendee
-     * @return the signups
-     */
-    ArrayList<Location> getSignups(Person attendee) {
-        return null;
     }
 
     /**
@@ -50,8 +31,8 @@ public class Signups implements Serializable{
      */
     public double getRevenue(Location location) {
         double revenue = 0;
-        for (Signup signup: pairs) {
-            if (signup.getLocation()== location) {
+        for (Signup signup : pairs) {
+            if (signup.getLocation() == location) {
                 if (location.type().equals("Exposição") && signup.getAttendee().type().equals("Estudante")) {
                     revenue += (location.getPrice() * 0.9);
                 } else {
@@ -68,7 +49,7 @@ public class Signups implements Serializable{
      * @param signup the signup
      * @return True if it exists
      */
-    boolean checkExist(Signup signup) {
+    private boolean checkExist(Signup signup) {
         for (Signup sign : pairs) {
             if (sign.getLocation() == signup.getLocation() && sign.getAttendee() == signup.getAttendee())
                 return true;
@@ -79,7 +60,7 @@ public class Signups implements Serializable{
     /**
      * Generates the guest list for the bar.
      *
-     * @param bar     the bar
+     * @param bar the bar
      * @return the array list
      */
     ArrayList<Person> guestList(Bar bar) {
@@ -106,14 +87,19 @@ public class Signups implements Serializable{
      * @param person the person
      * @return the array list
      */
-    ArrayList<Signup> getPersonSignups(Person person){
+    ArrayList<Signup> getPersonSignups(Person person) {
         ArrayList<Signup> signups = new ArrayList<>();
-        for (Signup signup:pairs)
-            if(person == signup.getAttendee()) signups.add(signup);
+        for (Signup signup : pairs)
+            if (person == signup.getAttendee()) signups.add(signup);
         return signups;
     }
 
-    void removeSignup(Signup signup){
+    /**
+     * Remove signup.
+     *
+     * @param signup the signup
+     */
+    void removeSignup(Signup signup) {
         pairs.remove(signup);
     }
 
@@ -122,7 +108,7 @@ public class Signups implements Serializable{
      *
      * @param person the person
      */
-    void removePersonSignups(Person person){
+    void removePersonSignups(Person person) {
         pairs.removeAll(getPersonSignups(person));
     }
 

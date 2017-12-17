@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * The type Exhibit.
  */
-public class Exhibit extends Location implements Serializable{
+public class Exhibit extends Location implements Serializable {
     private String category;
 
     /**

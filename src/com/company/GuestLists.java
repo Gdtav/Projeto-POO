@@ -1,13 +1,14 @@
 package com.company;
 
 import javax.swing.*;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-public class GuestLists extends JFrame{
+/**
+ * The type Guest lists.
+ */
+class GuestLists extends JFrame {
     private JList barList;
     private JButton returnButton;
     private JButton printButton;
@@ -15,6 +16,12 @@ public class GuestLists extends JFrame{
     private JPanel rootPanel;
     private JLabel titleLabel;
 
+    /**
+     * Instantiates a new Guest lists.
+     *
+     * @param mixer the mixer
+     * @param bars  the bars
+     */
     public GuestLists(Mixer mixer, ArrayList<Bar> bars) {
 
         printButton.addActionListener(new ActionListener() {

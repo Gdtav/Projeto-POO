@@ -5,13 +5,21 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-public class ManageSignups extends JFrame{
+/**
+ * The type Manage signups.
+ */
+class ManageSignups extends JFrame {
     private JButton nextButton;
     private JButton returnButton;
     private JList UserList;
     private JLabel subtitleLabel;
     private JPanel rootPanel;
 
+    /**
+     * Instantiates a new Manage signups.
+     *
+     * @param mixer the mixer
+     */
     public ManageSignups(Mixer mixer) {
         ArrayList<Person> people = mixer.getSignedUp();
         ArrayList<String> choices = new ArrayList<>();
@@ -39,7 +47,7 @@ public class ManageSignups extends JFrame{
              */
             @Override
             public void actionPerformed(ActionEvent e) {
-                new ChooseLocations(mixer,people.get(UserList.getSelectedIndex()));
+                new ChooseLocations(mixer, people.get(UserList.getSelectedIndex()));
             }
         });
 

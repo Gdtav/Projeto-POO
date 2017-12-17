@@ -5,9 +5,15 @@ import java.io.*;
 /**
  * The type Object file.
  */
-public class ObjectFile {
+class ObjectFile {
     private ObjectInputStream objectInputStream;
     private ObjectOutputStream objectOutputStream;
+
+    /**
+     * Instantiates a new Object file.
+     */
+    public ObjectFile() {
+    }
 
     /**
      * Open for read.
@@ -15,7 +21,7 @@ public class ObjectFile {
      * @param name the name
      * @throws IOException the io exception
      */
-    public void openRead(String name) throws IOException{
+    public void openRead(String name) throws IOException {
         objectInputStream = new ObjectInputStream(new FileInputStream(name));
     }
 
@@ -25,7 +31,7 @@ public class ObjectFile {
      * @param name the name
      * @throws IOException the io exception
      */
-    public void openWrite(String name) throws IOException{
+    public void openWrite(String name) throws IOException {
         objectOutputStream = new ObjectOutputStream(new FileOutputStream(name));
     }
 
@@ -46,7 +52,7 @@ public class ObjectFile {
      * @param o the o
      * @throws IOException the io exception
      */
-    public void writeObject(Object o) throws IOException{
+    public void writeObject(Object o) throws IOException {
         objectOutputStream.writeObject(o);
     }
 
@@ -60,17 +66,11 @@ public class ObjectFile {
     }
 
     /**
-     * Instantiates a new Object file.
-     */
-    public ObjectFile() {
-    }
-
-    /**
      * Close for write.
      *
      * @throws IOException the io exception
      */
-    public void closeWrite() throws IOException{
+    public void closeWrite() throws IOException {
         objectOutputStream.close();
 
     }

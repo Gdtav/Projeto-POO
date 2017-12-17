@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * The type Garden.
  */
-public class Garden extends Location implements Serializable{
+public class Garden extends Location implements Serializable {
     private double area;
 
     /**

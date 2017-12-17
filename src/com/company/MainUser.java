@@ -7,12 +7,21 @@ import java.io.IOException;
 
 import static java.lang.System.exit;
 
-public class MainUser extends JFrame {
+/**
+ * The type Main user.
+ */
+class MainUser extends JFrame {
     private JPanel rootPanel;
     private JButton chooseLocationsButton;
     private JButton printLocationsButton;
     private JButton exitButton;
 
+    /**
+     * Instantiates a new Main user.
+     *
+     * @param mixer  the mixer
+     * @param person the person
+     */
     public MainUser(Mixer mixer, Person person) {
         chooseLocationsButton.addActionListener(new ActionListener() {
             @Override

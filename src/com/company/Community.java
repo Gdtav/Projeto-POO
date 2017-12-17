@@ -4,17 +4,32 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
- * The type Community.
+ * The type Community. This is an abstract class from which Mixer descends.
  */
-public abstract class Community implements Serializable{
+abstract class Community implements Serializable {
     private ArrayList<Person> people;
 
     /**
-     * Add a person to the community's ArrayList<> people.
+     * Instantiates a new Community.
+     *
+     * @param people the people
+     */
+    Community(ArrayList<Person> people) {
+        this.people = people;
+    }
+
+    /**
+     * Instantiates a new Community.
+     */
+    Community() {
+    }
+
+    /**
+     * Add person.
      *
      * @param person the person
      */
-    public void addPerson(Person person) {
+    void addPerson(Person person) {
         people.add(person);
     }
 
@@ -32,22 +47,7 @@ public abstract class Community implements Serializable{
      *
      * @param people the people
      */
-    public void setPeople(ArrayList<Person> people) {
+    void setPeople(ArrayList<Person> people) {
         this.people = people;
-    }
-
-    /**
-     * Instantiates a new Community.
-     *
-     * @param people the people
-     */
-    public Community(ArrayList<Person> people) {
-        this.people = people;
-    }
-
-    /**
-     * Instantiates a new Community.
-     */
-    public Community() {
     }
 }

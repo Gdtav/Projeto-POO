@@ -7,7 +7,10 @@ import java.io.IOException;
 
 import static java.lang.System.exit;
 
-public class MainAdmin extends JFrame{
+/**
+ * The type Main admin.
+ */
+class MainAdmin extends JFrame {
     private JButton newSignupButton;
     private JButton manageSignupsButton;
     private JButton guestListsButton;
@@ -19,6 +22,11 @@ public class MainAdmin extends JFrame{
     private JButton printPeopleButton;
     private NewSignup newSignup = null;
 
+    /**
+     * Instantiates a new Main admin.
+     *
+     * @param mixer the mixer
+     */
     public MainAdmin(Mixer mixer) {
 
         exitButton.addActionListener(new ActionListener() {
@@ -45,7 +53,7 @@ public class MainAdmin extends JFrame{
         newSignupButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                if(newSignup == null || !newSignup.isShowing())
+                if (newSignup == null || !newSignup.isShowing())
                     newSignup = new NewSignup(mixer);
             }
         });
@@ -64,7 +72,7 @@ public class MainAdmin extends JFrame{
         revenueButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                new printProfits(mixer, mixer.getSignups());
+                new PrintProfits(mixer, mixer.getSignups());
             }
         });
         printLocationsButton.addActionListener(new ActionListener() {

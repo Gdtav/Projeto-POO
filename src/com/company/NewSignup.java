@@ -7,7 +7,10 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
-public class NewSignup extends JFrame {
+/**
+ * The type New signup.
+ */
+class NewSignup extends JFrame {
     private JPanel rootPanel;
     private JList peopleList;
     private JTextField idTextField;
@@ -15,10 +18,11 @@ public class NewSignup extends JFrame {
     private JButton exitButton;
     private JLabel checkLabel;
 
-    private void selectFromList() {
-
-    }
-
+    /**
+     * Instantiates a new New signup.
+     *
+     * @param mixer the mixer
+     */
     public NewSignup(Mixer mixer) {
         ArrayList<Person> people = mixer.getPeople();
         ArrayList<Person> notSignups = new ArrayList<>();
@@ -40,7 +44,7 @@ public class NewSignup extends JFrame {
             @Override
             public void mouseClicked(MouseEvent mouseEvent) {
                 if (mouseEvent.getClickCount() >= 2) {
-                    new passwordSelect("Selecione Password", notSignups.get(peopleList.getSelectedIndex()));
+                    new PasswordSelect("Selecione Password", notSignups.get(peopleList.getSelectedIndex()));
                     dispose();
                 }
             }
@@ -51,10 +55,9 @@ public class NewSignup extends JFrame {
                 try {
                     Person person;
                     if ((person = mixer.getPersonByID(Integer.valueOf(idTextField.getText()))) != null) {
-                        new passwordSelect("Selecione Password", mixer.getPersonByID(Integer.valueOf(idTextField.getText())));
+                        new PasswordSelect("Selecione Password", person);
                         dispose();
-                    }
-                    else
+                    } else
                         checkLabel.setText("ID desconhecido!");
                 } catch (NumberFormatException nExc) {
                     checkLabel.setText("Insira um ID válido!");

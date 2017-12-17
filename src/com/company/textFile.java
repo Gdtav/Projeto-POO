@@ -1,11 +1,14 @@
 package com.company;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.IOException;
 
 /**
  * The type Text file.
  */
-public class textFile {
+class textFile {
     private BufferedReader bufferedReader;
     private BufferedWriter bufferedWriter;
 
@@ -20,16 +23,6 @@ public class textFile {
     }
 
     /**
-     * Open for write.
-     *
-     * @param name the name
-     * @throws IOException the io exception
-     */
-    public void openWrite(String name) throws IOException {
-        bufferedWriter = new BufferedWriter(new FileWriter(name));
-    }
-
-    /**
      * Read line from file.
      *
      * @return the string
@@ -37,17 +30,6 @@ public class textFile {
      */
     public String readLine() throws IOException {
         return bufferedReader.readLine();
-    }
-
-    /**
-     * Write line.
-     *
-     * @param line the line
-     * @throws IOException the io exception
-     */
-    public void writeLine(String line) throws IOException {
-        bufferedWriter.write(line,0,line.length());
-        bufferedWriter.newLine();
     }
 
     /**
@@ -59,12 +41,4 @@ public class textFile {
         bufferedReader.close();
     }
 
-    /**
-     * Close for write.
-     *
-     * @throws IOException the io exception
-     */
-    public void closeWrite() throws IOException {
-        bufferedWriter.close();
-    }
 }
