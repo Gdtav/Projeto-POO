@@ -24,9 +24,9 @@ public class Bar extends Location implements Serializable {
     }
 
     /**
-     * Gets capacity percent.
+     * Gets percentage of people for the guest list.
      *
-     * @return the capacity percent
+     * @return the capacity percentage
      */
     public double getCapacityPercent() {
         return capacityPercent;

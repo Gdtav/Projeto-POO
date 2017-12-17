@@ -24,7 +24,7 @@ public class Signups implements Serializable {
     }
 
     /**
-     * Gets revenue.
+     * Gets revenue from a specific location.
      *
      * @param location the location
      * @return the revenue
